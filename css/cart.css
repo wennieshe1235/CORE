@@ -1,0 +1,872 @@
+@import url("reset.css");
+
+/* header, section, footer {
+    background-color: #d6ccc2;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+html{
+    font-size: 62.5%; /* 預設字級是16px, 16 x 62.5% ＝ 10 , 方便計算*/
+  }
+
+body{
+    
+    /* font-size: 20px; */
+    line-height: 1.6;
+    color: #333;
+    font-family: Noto Sans TC, Arial, Helvetica, sans-serif;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+#wrapper {
+    /* width: 1140px; */
+    /* wrapper寬度不適合限制固定寬度，會影響不同尺寸的呈現狀況 */
+    margin: 0 auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+/* ==============(中間內容)================ */
+.background{
+    background-color: #EDE1D1;
+    /* border: 1px solid #EDE1D1; */
+    width: 100%;
+    height: 100%; */
+    box-sizing:  border-box; /*包括邊框和內距*/
+    padding-top: 80px;
+    /* border: 1px solid red;  */
+
+
+}
+
+.cart-bg{
+    /* border: 1px solid blue; */
+    /* margin-top: 80px; */
+    /* margin-right: 60px; */
+    /* margin-left: 60px; */
+    /* padding-left: 60px; */
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    /* border-radius: 600px 600px  0 0; */
+    margin: 0 auto;
+
+
+
+}
+
+.cart-content{
+    /* border: 1px solid red;  */
+
+    width: 1140px;
+    padding: 32px 0;
+    margin: 0 auto;
+    /* display: flex; */
+    
+}
+
+
+
+.title{
+    /* border: 1px solid red;  */
+
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.title h1{
+    /* border: 1px solid red;  */
+    line-height: 28px;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #954E39;
+}
+
+.title > a{
+    /* border: 1px solid red;  */
+
+    display: block;
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #954E39;
+}
+
+.title > a:hover{
+    /* border: 1px solid red;  */
+
+    display: block;
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ff7e57;
+    
+}
+
+
+.scope{
+    /* border: 1px solid blue; */
+    width: 100%;
+    border-collapse: collapse; /* 移除单元格间的空白 */ 
+
+}
+
+.md-scope{
+    /* border: 1px solid blue;  */
+    display: flex;
+    position: relative;
+
+}
+
+.md-scope::after{
+    /* border: 1px solid blue;  */
+    position: absolute;
+    left: 0;
+    top: 28px;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #a7a7a7;
+    margin: 10px 0;
+}
+
+.col-md-1{
+    /* border: 1px solid blue;  */
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 15%;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.col-md-2{
+    /* border: 1px solid blue;  */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.col-md-3{
+    /* border: 1px solid blue;  */
+
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.col-md-4{
+    /* border: 1px solid blue;  */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;    
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.col-md-5 > a{
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    width: 100px;
+    height: auto;
+    /* border: 1px solid blue;  */
+    text-align: right;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #333;
+}
+
+.col-md-5 > a:hover{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    display: block;
+    width: 100px;
+    height: auto;
+    /* border: 1px solid blue;  */
+    text-align: right;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #954E39;
+}
+
+.xs1-scope{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.col-xs-1{
+    vertical-align: middle;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 22%;
+    
+}
+
+.col-xs-1 > a:first-child{
+    display: block;
+}
+
+
+
+.col-xs-1 > a:last-child > p{
+    display: block;
+}
+
+.col-xs-1 > a:last-child {
+    /* border: 1px solid blue;  */
+
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #333;
+    
+}
+
+.col-xs-1 > a:last-child > p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #A09E9B;
+}
+
+.col-xs-2{
+    vertical-align: middle;
+    flex-grow: 1.1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    
+}
+
+
+.sale-price > a:first-child{
+    display: block;
+    width: 70px;
+    height: 20px;
+    background-color: #B36243;
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 4px;
+}
+
+.sale-price > a:last-child{
+    display: block;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+
+.col-xs-3{
+    vertical-align: middle;
+    flex-grow: 0.9;
+    flex-shrink: 1;
+    flex-basis: auto;
+
+}
+
+
+.quantity-button{
+    display: inline-block;
+    text-align: center;
+    font-size: 1.6rem;
+    width: 40px;
+    height: 28px;
+    line-height: 28px;
+    border: 0; 
+}
+
+
+.quantity-input > button:hover {
+    background-color:#B36243;
+    transition: 0.3s;
+}
+
+
+.quantity-input > input{
+    display: inline-block;
+    text-align: center;
+    font-size: 1.6rem;
+    width: 40px;
+    height: 26px;
+    line-height: 26px;
+    border: 0; 
+}
+
+.col-xs-4{
+    vertical-align: middle;
+    flex-grow: 1.1;
+    flex-shrink: 1;
+    flex-basis: auto;
+
+}
+
+.col-xs-4 > p{
+    font-size: 1.8rem;
+}
+
+.col-xs-5{
+    vertical-align: middle;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+
+}
+
+.col-xs-5 > a{
+    /* border: 1px solid blue;  */
+
+    display: block;
+    width: auto;
+    height: auto;
+    /* padding-left: 10px; */
+    text-align:right ;
+
+}
+
+
+.xs2-scope{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.xs2-scope::after{
+    /* border: 1px solid blue;  */
+    position: absolute;
+    left: 0;
+    top: 160px;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1.2px;
+    background-color: #a7a7a7;
+    margin: 10px 0;
+}
+
+.content-2{
+    /* border: 1px solid blue;  */
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.content-2::after{
+    /* border: 1px solid blue;  */
+    position: absolute;
+    left: 0;
+    top: 292px;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1.2px;
+    background-color: #a7a7a7;
+    margin: 10px 0;
+}
+
+.left{
+    /* border: 1px solid blue; */
+    width: 48%; 
+
+}
+
+.shipping{
+    width: 100%;
+    margin-bottom: 2.4rem;
+}
+
+.shipping > p{
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.payment{
+    width: 100%;
+    margin-bottom: 2.4rem;
+}
+
+.payment > p{
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+
+}
+.input{
+    width: 100%;
+}
+
+.input select{
+    width: 100%;
+    height: 46px;
+}
+
+
+.time > p{
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+
+}
+
+.right{
+    /* border: 1px solid blue; */
+    width: 48%; 
+}
+
+.discount{
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.discount > p{
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+
+}
+
+.code-input{
+    display: flex;
+    width: 100%;
+}
+
+.fill{
+    flex-grow: 3;
+}
+
+.fill > input{
+    width: 90%;
+    height: 40px;
+}
+
+.confirm{
+    flex-grow: 1;
+    height: 46px;
+    display: block;
+    background-color: #B36243;
+    color: white;
+    text-align: center;
+    font-size: 2rem; 
+    /* margin-top: 44px; */
+    /* margin-bottom: px; */
+    line-height: 46px;
+    border: 0; 
+}
+
+.confirm:hover{
+    flex-grow: 1;
+    height: 46px;
+    display: block;
+    background-color: rgb(221, 202, 170);
+    color: #B36243;
+    text-align: center;
+    font-size: 2rem; 
+    /* margin-top: 44px; */
+    /* margin-bottom: px; */
+    line-height: 46px;
+    border: 0; 
+}
+
+.total{
+    width: 100%;
+}
+
+.count{
+    /* border: 1px solid blue; */
+
+    width: 100%;
+    /* padding-left: 40px; */
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.count > h3{
+    padding-left: 40%;
+    font-size: 1.6rem;
+
+}
+
+.count > p{
+    font-size: 1.6rem;
+
+}
+
+.shipping-fee{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shipping-fee > h3{
+    padding-left: 40%;
+    font-size: 1.6rem;
+
+}
+
+.shipping-fee > p{
+    font-size: 1.6rem;
+
+}
+
+.discount-fee{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.discount-fee > h3{
+    padding-left: 40%;
+    font-size: 1.6rem;
+
+}
+
+.discount-fee > p{
+    font-size: 1.6rem;
+
+}
+
+.total-fee{
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-fee > h3{
+    /* border: 1px solid blue; */
+
+    font-size: 3.2rem;
+    font-weight: 800;
+
+}
+
+.total-fee > p{
+    font-size: 3.2rem;
+    font-weight: 800;
+
+}
+
+.total > a{
+    height: 48px;
+    display: block;
+    background-color: #B36243;
+    color: white;
+    text-align: center;
+    font-size: 2rem; 
+    /* margin-top: 44px; */
+    margin-bottom: 8px;
+    line-height: 48px;
+    border: 1px solid #B36243;
+
+}
+
+.total > a:hover{
+    /* border: 1px solid red; */
+    height: 48px;
+    display: block;
+    background-color: white;
+    color: #B36243;
+    text-align: center;
+    font-size: 2rem; 
+    /* margin-top: 44px; */
+    margin-bottom: 8px;
+    line-height: 48px;
+    border: 1px solid #B36243;
+
+}
+
+
+.content-3{
+    /* width: 100%; */
+    margin: 0 auto;
+    /* border: 1px solid red; */
+    margin-top: 40px;
+    position: relative;
+    
+
+}
+
+.content-3::after{
+    /* border: 1px solid blue;  */
+    position: absolute;
+    left: 0;
+    top: 412px;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1.2px;
+    background-color: #a7a7a7;
+    margin: 10px 0;
+}
+
+.refer-title{
+    width: 100%;
+    text-align: center;
+    /* border: 1px solid red; */
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #954E39;
+    margin-top: 12px;
+
+}
+
+.refer-title::after{
+    content: "";
+    display: block;
+    width: 200px;
+    height: 2px;
+    background-color: #954E39;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    
+}
+
+.refer-product{
+    /* border: 1px solid red; */
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-item1{
+    /* flex-grow: 1; */
+    /* border: 1px solid red;  */
+    position: relative;
+    
+
+}
+
+.salestag-love {
+    /* border: 1px solid blue; */
+    display: flex;
+    width: 254px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 10;
+
+}
+
+
+.salestag-love > img{
+    display: block;
+}
+
+.salestag-love > a {
+    display: block;
+    width: 70px;
+    height: 20px;
+    background-color: #B36243;
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 4px;
+
+}
+
+
+.product-item1 > a{
+    /* border: 1px solid blue;  */
+    display: block;
+    width: 270px;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    position: relative;
+    
+}
+
+.product-item1 > a::after {
+    content: "";
+    position: absolute;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
+    transition: background-color 0.3s ease; /* 添加過渡效果 */
+    z-index: 100;
+}
+
+.product-item1 > a:hover::after {
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
+}
+
+.product-item2{
+    /* flex-grow: 1; */
+    position: relative;
+}
+
+
+.product-item2 > a{
+    /* border: 1px solid blue;  */
+    display: block;
+    width: 270px;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    position: relative;
+    
+}
+
+.product-item2 > a::after {
+    content: "";
+    position: absolute;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
+    transition: background-color 0.3s ease; /* 添加過渡效果 */
+    z-index: 100;
+}
+
+.product-item2 > a:hover::after {
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
+}
+
+.product-item3{
+    /* flex-grow: 1; */
+    position: relative;
+
+}
+
+.product-item3 > a{
+    /* border: 1px solid blue;  */
+    display: block;
+    width: 270px;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    position: relative;
+    
+}
+
+.product-item3 > a::after {
+    content: "";
+    position: absolute;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
+    transition: background-color 0.3s ease; /* 添加過渡效果 */
+    z-index: 100;
+}
+
+.product-item3 > a:hover::after {
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
+}
+
+.product-item4{
+    /* flex-grow: 1; */
+    position: relative;
+
+}
+
+.product-item4 > a{
+    /* border: 1px solid blue;  */
+    display: block;
+    width: 270px;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    position: relative;
+    
+}
+
+.product-item4 > a::after {
+    content: "";
+    position: absolute;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
+    transition: background-color 0.3s ease; /* 添加過渡效果 */
+    z-index: 100;
+}
+
+.product-item4 > a:hover::after {
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
+}
+
+.product-name > a{
+    color: #333;
+
+}
+.product-name > a > h3{
+    display: block;
+    font-weight: 800;
+    font-size: 1.8rem;
+    
+}
+
+
+
+.product-name > a:last-child {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.content-4{
+    margin-top: 48px;
+    /* border: 1px solid blue;  */
+
+}
+
+.content-4 p{
+    font-size: 1.8rem;
+
+}
+

@@ -1,0 +1,271 @@
+@import url("reset.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+html{
+    font-size: 62.5%; /* 預設字級是16px, 16 x 62.5% ＝ 10 , 方便計算*/
+  }
+
+body{
+    
+    /* font-size: 20px; */
+    line-height: 1.6;
+    color: #333;
+    font-family: Noto Sans TC, Arial, Helvetica, sans-serif;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+#wrapper {
+    /* width: 1140px; */
+    /* wrapper寬度不適合限制固定寬度，會影響不同尺寸的呈現狀況 */
+    margin: 0 auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+/* ================中間內容============== */
+.background{
+    background-color: #EDE1D1;
+    /* border: 1px solid #EDE1D1; */
+    width: 100%;
+    height: 100%; */
+    box-sizing:  border-box; /*包括邊框和內距*/
+    padding-top: 100px;
+    /* border: 1px solid red;  */
+
+
+}
+
+.product-bg{
+    /* border: 1px solid blue; */
+    padding-bottom: 40px;
+
+}
+
+.content-1{
+    border: 1px solid #757575;
+    border-radius: 20px; 
+
+    width: 600px;
+    
+    margin: 0 auto;
+    /* display: flex; */
+    
+}
+
+.page-change{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+}
+
+.register{
+    flex-basis: 50%;
+
+}
+
+.register > a{
+    /* border: 1px solid red; */
+    height: 48px;
+    display: block;
+    /* background-color: white; */
+    color: #333;
+    text-align: center;
+    font-size: 2rem; 
+    /* margin-top: 44px; */
+    margin-bottom: 8px;
+    line-height: 48px;
+    /* border: 1px solid #775D57; */
+    font-weight: 800;
+    border-radius: 18px 0 0 0;
+    border-bottom: 1px solid #757575;
+
+
+}
+
+.login{
+    flex-basis: 50%;
+
+}
+
+
+.login > a{
+   /* border: 1px solid red; */
+   height: 48px;
+   display: block;
+   background-color: white;
+   color: #775D57;
+   text-align: center;
+   font-size: 2rem; 
+   /* margin-top: 44px; */
+   margin-bottom: 8px;
+   line-height: 48px;
+   /* border: 1px solid #775D57; */
+   font-weight: 800;
+   border-radius: 0 20px 0 0;
+   border-bottom: 1px solid #757575;
+
+
+}
+
+
+.inner-content{
+    /* border: 1px solid red;  */
+
+    width: 400px;
+    padding: 40px 0;
+    margin: 0 auto;
+    /* display: flex; */
+}
+
+
+.account{
+    border: 1px solid #757575; 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+
+}
+
+.icon01{
+    /* border: 1px solid blue;  */
+    /* border-right: 1px solid #757575; */
+
+    flex-basis: 10%;
+    text-align: center;
+
+}
+
+.icon01 > li{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.icon01 > li > img{
+
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+
+}
+
+.account > input{
+    flex-basis: 90%;
+    width: 100%;
+    height: 48px;
+    border: 0;
+    border-left: 1px solid #757575;
+
+
+
+}
+
+.password{
+    border: 1px solid #757575; 
+    /* border-radius: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+
+}
+
+
+.password > input{
+    flex-basis: 90%;
+    width: 100%;
+    height: 48px;
+    border: 0;
+    border-left: 1px solid #757575;
+
+
+}
+
+.forget{
+    margin-bottom: 40px;
+
+}
+
+.forget > a{
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: #333;
+}
+
+
+
+.inner05 > a{
+    height: 48px;
+    display: block;
+    background-color: #775D57;
+    color: white;
+    text-align: center;
+    font-size: 1.6rem; 
+    /* margin-top: 44px; */
+    margin-bottom: 8px;
+    line-height: 48px;
+    border: 1px solid #775D57;
+
+}
+
+.inner05 > a:hover{
+    /* border: 1px solid red; */
+    height: 48px;
+    display: block;
+    background-color: white;
+    color: #775D57;
+    text-align: center;
+    font-size: 1.6rem; 
+    /* margin-top: 44px; */
+    margin-bottom: 8px;
+    line-height: 48px;
+    border: 1px solid #775D57;
+
+}
+
+
+.inner06 > a{
+    height: 48px;
+    display: block;
+    background-color: #B1AA9C;
+    color: white;
+    text-align: center;
+    font-size: 1.6rem; 
+    /* margin-top: 44px; */
+    margin-bottom: 8px;
+    line-height: 48px;
+    border: 1px solid #B1AA9C;
+
+}
+
+.inner06 > a:hover{
+    /* border: 1px solid red; */
+    height: 48px;
+    display: block;
+    background-color: white;
+    color: #B1AA9C;
+    text-align: center;
+    font-size: 1.6rem; 
+    /* margin-top: 44px; */
+    margin-bottom: 8px;
+    line-height: 48px;
+    border: 1px solid #B1AA9C;
+
+}

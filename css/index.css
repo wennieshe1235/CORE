@@ -1,0 +1,497 @@
+@import url("reset.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+html{
+    font-size: 62.5%; /* 預設字級是16px, 16 x 62.5% ＝ 10 , 方便計算*/
+  }
+
+body{
+    
+    /* font-size: 20px; */
+    line-height: 1.6;
+    color: #333;
+    font-family: Noto Sans TC, Arial, Helvetica, sans-serif;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+#wrapper {
+    /* width: 1140px; */
+    /* wrapper寬度不適合限制固定寬度，會影響不同尺寸的呈現狀況 */
+    margin: 0 auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+/* ==============(header大圖輪播)================ */
+
+
+.coverflow{
+    width: auto;
+    height: 800px;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.coverflow > a{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slider 15s linear infinite;
+
+}
+
+.coverflow > a > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 在編打:nth-child前記得不要有空格!!會有問題 .coverflow > a:nth-child(1) 而不是 .coverflow > a :nth-child(1). */
+.coverflow > a:nth-child(1){
+    animation-delay: 0s;
+}
+
+.coverflow > a:nth-child(2){
+    animation-delay: 5s;
+}
+
+.coverflow > a:nth-child(3){
+    animation-delay: 10s;
+}
+
+@keyframes slider {
+    3% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+    27% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+    30% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+
+}
+
+
+/* =================首頁品牌介紹================== */
+
+.topic01_outer{
+    position: relative;
+    z-index: 10;
+    /* border: 1px solid blue; */
+}
+
+/*用偽元素處理弧形背景*/
+.topic01_outer::before{
+    /* border: 1px solid blue; */
+    content: "";
+    position: absolute;
+    max-width: 1770px;
+    width: 97%;
+    height: 58%;
+    top: 24%;
+    left: 0%;
+    background: #9f9f9f;
+    opacity: .4;
+    border-radius: 0;
+    z-index: -1;
+}
+
+
+.content-1{
+    /* border: 1px solid blue; */
+    display: flex;
+    position: relative;
+    /* padding-left: 22%; /* 留出圖片所佔空間 */
+    /* padding-top: 30%; 如果需要，留出圖片所佔空間 */
+    padding-bottom: 0px; */
+    /* margin-top: 30px; */
+}
+
+.content-1 ul{
+    /* border: 1px solid red; */
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    /* padding-left: 22%; /* 留出圖片所佔空間 */
+    /* padding-top: 30%; 如果需要，留出圖片所佔空間 */
+    /* padding-right:40%; */
+    padding-bottom: 6%;
+}
+
+/* add:品牌介紹卡片效果 */
+.describe{
+    /* border: 1px solid red; */
+    flex-basis: 40%;
+    flex-grow: 1;
+    height: 640px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.describe:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* ========================= */
+
+.img1{
+    flex-basis: 15%;
+    flex-grow: 1;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+
+
+.img1 img{
+    /* border: 1px solid red; */
+    display: block;
+    width: 100%;/* 等比例縮放 */
+    height: auto;/* 高度保持比例 */
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    max-height: 100%;
+    max-width: 95%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+}
+
+.img1 img:hover{
+    transform: scale(1.1);
+    
+}
+
+.img1 > img:last-child{
+    /* border: 1px solid red; */
+    display: block;
+    padding-left: 34px;
+    max-width: 80%;
+    padding-bottom: 60%;
+
+}
+
+.img2{
+    height: 800px;
+    flex-basis: 35%;
+    flex-grow: 1;
+    /* border: 1px solid red; */
+    display: flex;
+    padding-top: 5%;
+}
+
+.img2 > div{
+    background-size: cover;
+    background-position: center center;
+    transition: .5s;
+    filter: grayscale(100%); /* 初始狀態下，所有item都家案灰色濾鏡 */
+}
+
+.img2 > .img2-item1{
+    background-image: url(/img/home_decoration_img-2.png);
+    flex-grow: 7;
+    filter: none;
+
+}
+
+.img2-item2{
+    background-image: url(/img/Deco_3_img.png);
+    flex-grow: 2;
+
+}
+
+.img2-item3{
+    background-image: url(/img/Deco_4_img.png);
+    flex-grow: 1;
+
+}
+
+.img2 > div:hover{
+    flex-grow: 12;
+    filter: none; /* hover時當前item變清楚 */
+}
+
+.img2:hover > div:not(:hover) {
+    filter: grayscale(100%); /* hover時當前item添加灰色濾鏡 */
+}
+
+.describe > h1{
+    /* border: 1px solid red; */
+    color: #D7AC89;
+    font-size: 8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 40px;
+
+}
+
+.describe > h2{
+    /* border: 1px solid red; */
+    color: #7A7A7A;
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding-right: 40px;
+    text-align: justify;
+}
+
+.describe > p{
+    /* border: 1px solid red; */
+    color: #7A7A7A;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding-right: 40px;
+    text-align: justify;
+}
+
+.describe > p strong {
+    font-weight: 800;
+}
+
+
+/* add :按鈕的背景顏色從左至右漸變成白色 */
+.describe > a{
+
+    /* border: 1px solid red; */
+    display: block;
+    width: 120px;
+    height: 50px;
+    background-color: #B36243;
+    text-align: center;
+    line-height: 50px;
+    /* border-radius: 12px; */
+    font-weight: 800;
+    color: white;
+    font-size: 1.6rem;
+    border: 1.5px solid #B36243;
+    position: relative;
+    overflow: hidden; /* 確保漸變效果不會超出按鈕範圍 */
+    z-index: 0;
+
+
+}
+
+.describe > a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120px; /* 設定初始位置在按鈕外部 */
+    width: 120px;
+    height: 100%;
+    background-color: white;
+
+    transition: left 0.3s ease; /* 設定漸變效果的時間和方式 */
+    z-index: -1; /* 使偽元素在文字之下 */
+    
+}
+
+.describe > a:hover::before {
+    left: 0; /* 當 hover 時移動到按鈕內部 */
+    
+
+}
+
+
+
+.describe > a:hover {
+    color: #B36243;
+    mix-blend-mode: screen; /* 使用混合模式來確保文字顏色顯示 */
+
+}
+
+/* =================首頁導購按鈕================== */
+.buttons{
+    /* border: 1px solid red; */
+    background-color: #E6DEC7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+
+}
+
+.buttons ul{
+    /* border: 1px solid blue; */
+    width: 1140px;
+    padding: 60px 150px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.buttons li{
+    /* border: 1px solid blue; */
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons a{
+    border: 1.5px solid #848484 ;
+    display: block;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #848484;
+
+}
+
+/* add:按鈕縮放效果 */
+.buttons a:hover{
+    /* border: 1.5px solid #848484 ; */
+    background-color: #848484;
+    display: block;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: white;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+
+}
+
+/* ===================== */
+
+/* ================首頁商品導購圖============== */
+
+.items{
+    display: flex;
+    background-color: #CBBEB5;
+    overflow: hidden;
+
+}
+
+.content-2{
+    /* border: 1px solid blue; */
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.items h2{
+    writing-mode: vertical-rl; /* 垂直排版:旋轉整個文字方塊 */
+    /* text-orientation: upright; 文字直立方向 */
+    font-weight: 800;
+    font-size: 9rem;
+    color: #8B5E3C;
+    margin-right: 10px; /* 與商品列表保持距離 */
+    text-align: center; /* 垂直居中 */
+
+}
+
+.items-main{
+    /* border: 1px solid blue; */
+    /* max-width: 100%; */
+    display: grid ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 40px;
+} 
+
+
+.items-main .item-1{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.items-main .item-2{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.items-main .item-3{
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.items-main .item-4{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.items-main .item-5{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.items-main .item-6{
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.items a{
+
+    display: block;
+    width: 300px;
+    height: 300px;
+    background-color: #ede5e5;
+    text-align: center;
+    line-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* 為了定位 ::after 偽元素 */
+    overflow: hidden; /* 確保偽元素不會溢出 */
+
+}
+
+
+.items a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
+    transition: background-color 0.3s ease; /* 添加過渡效果 */
+}
+
+.items a:hover::after {
+    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
+}
+
+
+.items img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+
+}
+
