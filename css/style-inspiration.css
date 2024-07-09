@@ -108,7 +108,7 @@ a{
     content: "";
     width: 18px;
     height: 24px;
-    background: url(/img/ep_arrow-up.png) center center / contain no-repeat;
+    background: url(../img/ep_arrow-up.png) center center / contain no-repeat;
 
 }
 
@@ -249,7 +249,7 @@ a{
     content: "";
     width: 18px;
     height: 24px;
-    background: url(/img/crumb-arrow.png) center center / contain no-repeat;
+    background: url(../img/crumb-arrow.png) center center / contain no-repeat;
    
 }
 

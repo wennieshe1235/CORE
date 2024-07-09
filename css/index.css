@@ -209,20 +209,20 @@ a{
 }
 
 .img2 > .img2-item1{
-    background-image: url(/img/home_decoration_img-2.png);
+    background-image: url(../img/home_decoration_img-2.png);
     flex-grow: 7;
     filter: none;
 
 }
 
 .img2-item2{
-    background-image: url(/img/Deco_3_img.png);
+    background-image: url(../img/Deco_3_img.png);
     flex-grow: 2;
 
 }
 
 .img2-item3{
-    background-image: url(/img/Deco_4_img.png);
+    background-image: url(../img/Deco_4_img.png);
     flex-grow: 1;
 
 }
