@@ -132,13 +132,13 @@ a{
 }
 
 
-.icon img{
+.icon i{
 
     /* border: 1px solid blue; */
     display: block;
     /* 在 .list-item img 中使用 max-height 和 max-width 來確保圖像不會超過父元素的尺寸，同時保持圖像的比例 */
-    max-height: 70%;
-    max-width: 70%;
+    max-height: 100%;
+    max-width: 100%;
     /* text-align: center; */
 }
 
@@ -195,9 +195,10 @@ footer{
     margin-bottom: 10px;
 }
 
-.manual p{
+.manual a{
+    display: block;
     font-weight: 300;
-    margin-bottom: 10px;
+
 }
 
 .contact{
@@ -211,8 +212,8 @@ footer{
 }
 
 .contact p{
+    display: block;
     font-weight: 300;
-    margin-bottom: 10px;
 }
 
 .user ul{
@@ -233,8 +234,9 @@ footer{
     justify-content: center;
 }
 
-.user img{
+.user i{
     display: block;
+    font-size: 20px;
 }
 
 .copyright{
