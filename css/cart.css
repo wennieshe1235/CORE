@@ -227,12 +227,28 @@ a{
     flex-shrink: 0;
     flex-basis: 22%;
     
+    
 }
 
 .col-xs-1 > a:first-child{
+    /* border: 1px solid blue; */
     display: block;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    
+    
 }
 
+.col-xs-1 > a:first-child > img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+
+
+}
 
 
 .col-xs-1 > a:last-child > p{
@@ -710,6 +726,14 @@ a{
     
 }
 
+.product-item1 > a > img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+
+}
+
 .product-item1 > a::after {
     content: "";
     position: absolute;
@@ -746,6 +770,14 @@ a{
     border-radius: 20px;
     position: relative;
     
+}
+
+.product-item2 > a > img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+
 }
 
 .product-item2 > a::after {
@@ -786,6 +818,13 @@ a{
     
 }
 
+.product-item3 > a > img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+
+}
 .product-item3 > a::after {
     content: "";
     position: absolute;
@@ -822,6 +861,13 @@ a{
     border-radius: 20px;
     position: relative;
     
+}
+.product-item4 > a > img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+
 }
 
 .product-item4 > a::after {
