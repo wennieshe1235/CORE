@@ -233,6 +233,7 @@ a{
     height: 24px;
     margin-right: 5px;
     padding-right: 18px;
+    z-index: 10;
     
 
 
@@ -285,11 +286,61 @@ a{
     display: flex;
     align-items: start;
     justify-content: end;
-    width: 100%;
+    width: 1018px;
     height: auto;
 
 
 }
+
+/* 增加輪播圖功能 */
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.image{
+	width: 100%;
+	height: auto;
+}
+#sliderBoard{	/* div */
+    position: relative; /* 新增這行 */
+	/* border: 1px solid red; */
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+
+	overflow: hidden;
+}
+#content{		/* ul */
+	position: relative;
+}
+#content li{	/* li */
+	float: left;
+}
+/* circle button */
+#contentButton{
+    position: absolute; /* 新增這行 */
+    bottom: 10px; /* 可以根據需要調整位置 */
+    left: 50%;
+    transform: translateX(-50%); /* 水平居中 */
+    border: none; /* 去掉邊框 */
+	text-align: center;
+	height: 50px;
+}
+#contentButton li{
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: #ccc;
+	margin: 8px;
+
+	display: inline-block;
+    cursor: pointer; /* 增加鼠標變成手型 */
+}
+#contentButton li.clicked{
+	background-color: #666;
+}
+
 
 .slogan{
     position: absolute;
