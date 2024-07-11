@@ -76,7 +76,6 @@ a{
     flex-grow: 1;
     /* border: 2px solid red; */
     position: relative;
-    margin: 0 30px;
     display: flex;
     /* #main-sel li 導入 Flex，並使用 align-items 和 justify-content 來把所有內部的元素垂直和水平置中 */
     align-items: center;
@@ -84,14 +83,29 @@ a{
 }
 
 
+
 #main-sel li a{
     /* border: 1px solid blue; */
     display: block;
+    max-width: 100%;
     text-align: center;
     line-height: 42px;
     font-size: 1.6rem;
+   
+
     
 }
+
+.navbar-list li > a{
+    /* border: 1px solid blue; */
+    display: block;
+    max-width: 100%;
+    text-align: center;
+    line-height: 42px;
+    font-size: 1.6rem;
+    padding: 0 30px;
+}
+
 
 /* add:選單項目的滑動下劃線效果 */
 .navbar-list li a::after {
@@ -128,9 +142,13 @@ a{
 }
 
 .icon li{
-    margin-left: 25px;
+    /* margin-left: 25px; */
 }
 
+.icon li >a{
+    display: block;
+    padding-left: 25px;
+}
 
 .icon i{
 
