@@ -436,12 +436,47 @@ a{
 }
 .input{
     width: 100%;
+    position: relative; /* 為了偽元素定位 */
 }
 
 .input select{
     width: 100%;
     height: 46px;
+    line-height: 46px; /* 確保游標高度與input框高度一致 */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+    appearance: none; /* 隱藏默認的下拉箭頭 */
+    background: transparent; /* 確保背景透明 */
+   
 }
+
+.input > select > option {
+    line-height: 20px; /* 讓選項的高度與select框一致 */
+    vertical-align: middle; /* 垂直置中 */
+    text-align: left; /* 水平靠左對齊 */
+     /* 加上內邊距，讓文字與邊框有間隔 */
+}
+
+.input::after {
+    content: "▼"; /* 使用自定義的箭頭符號 */
+    font-size: 16px;
+    color: #B36243;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* 確保偽元素不會干擾選擇操作 */
+}
+
+.input select:focus {
+    border-color: #B36243;
+    box-shadow: 0 0 8px rgba(179, 98, 67, 0.3); /* 暈染效果 */
+    outline: none; /* 移除默認的黑框 */
+}
+
 
 
 .time > p{
@@ -477,7 +512,19 @@ a{
 
 .fill > input{
     width: 90%;
-    height: 40px;
+    height: 44px;
+    line-height: 44px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 8px;
+    font-size: 20px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.fill > input:focus {
+    border-color: #B36243;
+    box-shadow: 0 0 8px rgba(179, 98, 67, 0.3); /* 暈染效果 */
+    outline: none; /* 移除默認的黑框 */
 }
 
 .confirm{
@@ -587,30 +634,30 @@ a{
 }
 
 .total > a{
-    height: 48px;
+    height: 45px;
     display: block;
     background-color: #B36243;
     color: white;
     text-align: center;
     font-size: 2rem; 
-    /* margin-top: 44px; */
+    /* margin-top: 45px; */
     margin-bottom: 8px;
-    line-height: 48px;
+    line-height: 45px;
     border: 1px solid #B36243;
 
 }
 
 .total > a:hover{
     /* border: 1px solid red; */
-    height: 48px;
+    height: 45px;
     display: block;
     background-color: white;
     color: #B36243;
     text-align: center;
     font-size: 2rem; 
-    /* margin-top: 44px; */
+    /* margin-top: 45px; */
     margin-bottom: 8px;
-    line-height: 48px;
+    line-height: 45px;
     border: 1px solid #B36243;
 
 }
