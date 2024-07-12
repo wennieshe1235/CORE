@@ -237,13 +237,36 @@ a{
     width: 100%;
     height: 40px;
     border: 0;
+    border: 1px solid #ccc;
+    /* border-radius: 4px; */
+    padding: 0 8px;
+    font-size: 20px;
+    transition: border-color 0.3s ease-in-out;
 }
 
-.inner03 > .code-input > .fill > input{
+.fill > input:focus {
+    border-color: #B36243;
+    box-shadow: 0 0 8px rgba(179, 98, 67, 0.3); /* 暈染效果 */
+    outline: none; /* 移除默認的黑框 */
+}
+
+
+.inner03 > .code-input > .fill > textarea{
     /* border: 1px solid red; */
     width: 100%;
     height: 200px;
     border: 0;
+    border: 1px solid #ccc;
+    /* border-radius: 4px; */
+    padding: 8px 8px;
+    font-size: 20px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.inner03 > .code-input > .fill > textarea:focus {
+    border-color: #B36243;
+    box-shadow: 0 0 8px rgba(179, 98, 67, 0.3); /* 暈染效果 */
+    outline: none; /* 移除默認的黑框 */
 }
 
 .inner04{
