@@ -8,6 +8,7 @@ html{
 body{
     
     /* font-size: 20px; */
+    width: 100%;
     line-height: 1.6;
     color: #333;
     font-family: Noto Sans TC, Arial, Helvetica, sans-serif;
@@ -22,11 +23,12 @@ a{
 #wrapper {
     /* width: 1140px; */
     /* wrapper寬度不適合限制固定寬度，會影響不同尺寸的呈現狀況 */
+    /* border: 1px solid red; */
+    width: 100%;
     margin: 0 auto;
-    margin: 0;
     padding: 0;
     border: 0;
-    vertical-align: baseline;
+    /* vertical-align: baseline; */
 }
 
 /* ==============(header大圖輪播)================ */
@@ -88,6 +90,11 @@ a{
 
 
 /* =================首頁品牌介紹================== */
+
+main{
+    width: 100%;
+    /* border: 1px solid blue; */
+}
 
 .topic01_outer{
     position: relative;
@@ -342,7 +349,7 @@ a{
 
 /* =================首頁導購按鈕================== */
 .buttons{
-    /* border: 1px solid red; */
+    border: 1px solid red;
     background-color: #E6DEC7;
     display: flex;
     align-items: center;
@@ -352,9 +359,10 @@ a{
 }
 
 .buttons ul{
-    /* border: 1px solid blue; */
-    width: 1140px;
-    padding: 60px 150px;
+    border: 1px solid blue;
+    width: 100%;
+    max-width: 1140px;
+    padding: 60px 0;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -363,7 +371,7 @@ a{
 
 
 .buttons li{
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -408,11 +416,15 @@ a{
     display: flex;
     background-color: #CBBEB5;
     overflow: hidden;
+    width: 100%;
+    /* border: 1px solid blue; */
+
 
 }
 
 .content-2{
     /* border: 1px solid blue; */
+    width: 100%;
     max-width: 1140px;
     margin: 0 auto;
     padding: 80px 0;
@@ -435,7 +447,7 @@ a{
 
 .items-main{
     /* border: 1px solid blue; */
-    /* max-width: 100%; */
+    width: 100%;
     display: grid ;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -513,3 +525,55 @@ a{
 
 }
 
+
+/* =============新增互動功能:隨機推薦商品============ */
+
+/* 新增推薦商品區域的樣式 */
+.recommendation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.recommendation label {
+    margin-right: 10px;
+    font-size: 1.6rem;
+}
+
+.recommendation select {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 1.6rem;
+}
+
+.recommendation button {
+    padding: 5px 10px;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.recommended-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.recommended-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.recommended-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.recommended-item p {
+    margin: 10px 0;
+    font-size: 1.4rem;
+}
