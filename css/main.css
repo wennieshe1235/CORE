@@ -291,6 +291,74 @@ footer{
 }
 
 
+/* ============== RWD側邊選單追加樣式 ================= */
+#menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: opacity 0.3s ease; /* 添加過渡效果 */
+  }
+  
+  #side-menu {
+    display: none;
+    position: fixed;
+    /* top: 0; */
+    top: 50px;
+    right: 0;
+    width: 66%;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  #side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid yellow; */
+  }
+  
+  #side-menu li {
+    padding: 12px;
+    border-bottom: 1px solid #444;
+    /* border: 1px solid yellow; */
+
+    /* ------------- */
+
+    /* 讓 li 元素的區域可點擊擴大到整個 li 區域 */
+    position: relative; 
+    cursor: pointer; /* 使用 cursor: pointer 來顯示是可以點擊的 */
+  }
+  
+  #side-menu a {
+    color: #fff;
+    text-decoration: none;
+    /* border: 1px solid yellow; */
+    font-size: 1.4rem;
+    display: block;
+    width: auto; /* a連結內容的 width設定要能顯示效果，必須在父層li設定寬度，或加上position:relative，才能生效 */
+    height: auto;/* height設定同上 */
+    line-height: auto;
+    /* ------------ */
+    padding: 4px; /* 調整連結內容的 padding */
+  }
+
+/* ------------------ */
+  .hamburger {
+    display: none;
+    font-size: 2.4rem;
+    color: #fff;
+    cursor: pointer;
+  }
+
 
 @media screen and (max-width: 1030px) {
     /* 第一個斷點提早設定，標題列的字會擠到換行 */
@@ -301,7 +369,7 @@ footer{
 
     /* 當螢幕寬度小於1030px時，調整navbar-list li中的內容 */
     .navbar-list li {
-        margin: 0 10px; /* 調整間距 */
+        margin: 0 4px; /* 調整間距 */
     }
     
     #main-sel li a {
@@ -342,11 +410,44 @@ footer{
         display: none;
     }
 
-    #main-sel::after {
-        content: '\2630'; /* Unicode for hamburger icon */
-        font-size: 2.4rem;
-        color: #fff;
-        cursor: pointer;
+
+
+    .hamburger {
+        display: block;
+      }
+    }
+    
+    #side-menu.show {
+      display: block;
+      transform: translateX(0);
+     
+    }
+    
+    #menu-overlay.show {
+      display: block;
+      opacity: 1; /* 顯示遮罩 */
+    }
+
+
+    /* #side-menu .social li:first-child {
+        border-top: 1px solid #727272;
+      } */
+
+    #side-menu .social li a{
+        /* border: 1px solid yellow; */
+        width: auto;
+        height: auto;
+        color: #fec599;
+      }
+
+    .social li a::after{
+        content: attr(title);
+      }
+
+    #side-menu .social li i{
+    margin-right: 4px;
+    width: 15px;
+    text-align: center;
     }
 
     footer {
