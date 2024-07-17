@@ -415,7 +415,7 @@ footer{
     .hamburger {
         display: block;
       }
-    }
+    
     
     #side-menu.show {
       display: block;
@@ -454,7 +454,7 @@ footer{
 
         /* border: 1px solid blue; */
         width: 100%;
-        /* padding: 20px; */
+        
     }
 
     .content-footer {
@@ -484,8 +484,8 @@ footer{
         padding: 10px 0;
         text-align: center;
     }
-  }
-  
+
+}
   
   
   
