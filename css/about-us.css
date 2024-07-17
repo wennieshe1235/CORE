@@ -420,7 +420,7 @@ a{
     .itemscope li {
         /* border: 1px solid red; */
     
-        font-size: 2rem;
+        font-size: 1.6rem;
         color: #3e3e3e;
 
     
@@ -428,7 +428,7 @@ a{
     /* 標語介紹文區往內縮，margin往外推 */
     .inner01{
         gap: 0 25px;
-        margin: 60px 4% 0;
+        margin: 12px 4% 0;
     }
 
     /* 左右圖片區wrap01和wrap03往內縮，margin往外推 */
@@ -561,95 +561,190 @@ a{
 }
 
 @media screen and (max-width: 765px) {
-    
-}
 
-@media screen and (max-width: 430px) {
+    .about02::before{
+
+        content: "";
+        position: absolute;
+        max-width: 1770px;
+        width: 100%;
+        height: 50%;
+        top: 0%;
+        left: 0%;
+        background: #EDE1D1;
+        /* opacity: .4; */
+        border-radius:  0 0 35% 35%;
+        z-index: -1;        
+    }
+
+    .content-2{
+        flex-wrap: wrap;
+    }
 
     .figure_wrap01{
-        /* border: 1px solid red;  */
-        padding-left: 4%;  
+        display: none;
+        
+        border: 1px solid red; 
+        flex-basis: 5%;
+        order: 3;
+        flex-shrink: 2;
+
+
     }
-    
-    .f1{
-        width: 80%;
-    }
-    
-    .f1 > img{
-        /* border: 1px solid red;  */
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .f2{
-        width: 75%;
-        padding-left: 60px;
-        padding-bottom: 120px;
-    }
-    
-    .f2 > img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    
-    
-    }
-    
+
     .figure_wrap02{
-        flex-grow: 1;
-        flex-basis: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        /* border: 1px solid red;  */
+        flex-basis: 100%;
+        order: 1;
     }
     
-    .main-fig{
-        width: 75%;
-        padding: 60px 0;
-    }
-    
-    .main-fig > img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
     
     .figure_wrap03{
-        /* border: 1px solid red;  */
-        padding-right: 4%;
-        flex-grow: 1;
-        flex-basis: 20%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: end;
+        display: none;
+
+        border: 1px solid red; 
+        flex-basis: 5%;
+        order: 2;
+        justify-content: center;
+        align-items: flex-end;
+        flex-shrink: 3;
+
+
+
+       
     }
-    
-    .f3{
+
+    .main-fig{
         width: 80%;
+        padding: 40px 0;
+    }
+
+    .f1{
+        width: 40%;
     }
     
-    .f3 > img{
-        /* border: 1px solid red;  */
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+
+    .f2{
+        width: 60%;
+        padding-top: 60px;
+    }
+    
+
+    .f3{
+        width: 30%;
     }
     
     .f4{
-        width: 80%;
-        padding-right: 48px;
-        padding-bottom: 100px;
+        width: 50%;
+        padding-top: 60px;
     }
     
-    .f4 > img{
+
+
+    .inner01{
         /* border: 1px solid red;  */
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        flex-wrap: wrap;
+    }
+    
+    .heading{
+        flex-basis: 100%;
+    }
+    
+    .heading > h2{
+        /* border: 1px solid red;  */
+        line-height: 6rem;
+        font-size: 6rem;
+        color: #954E39;
+        font-weight: 800;
+        letter-spacing: .4rem;
+
+    }
+    
+    .text{
+        /* border: 1px solid red;  */
+    
+        flex-basis: 100%;
+        /* width: 100%; */
+        margin-top: 32px;
+    }
+    
+    .text h3{
+        font-size: 2rem;
+        font-weight: 800;
+        color: #848484;
+        margin-bottom: 16px;
+    }
+    
+    .text  > p{
+        font-size: 1.6rem;
+        color: #848484;
+        margin-bottom: 20px;
+        
     }
 
 
+    .inner03{
+        /* border: 1px solid red;  */
+        flex-wrap: wrap;
+    }
+    
+    .profile{
+        /* border: 1px solid red;  */
+    
+        flex-basis: 100%;
+    
+        
+    }
+    
+    .f5{
+        /* border: 1px solid red; */
+        margin: 24px auto 4px;
+        width: calc(90% - 40px);
+        height: 200px;
+        /* padding-left: 48px;
+        padding-top: 24px;
+        padding-bottom: 24px; */
+        background: url(../img/about-us_final_deco_rwd.jpg)center center / auto repeat;;
+    }
+    
+    .f5 > img{
+        /* border: 1px solid red;  */
+        display: none;
+    }
+    
+    .content-3{
+        padding-top: 0;
+    }
+    
+
+    .txt{
+        /* border: 1px solid red;  */
+        flex-basis: 100%;
+
+        /* flex-basis: 70%; */
+        padding-top: 16px;
+        box-sizing: border-box;
+        padding-left: 20px;
+    }
+    
+    .txt > h3{
+        font-size: 2rem;
+        font-weight: 800;
+        color: #848484;
+        margin-bottom: 8px;
+        
+    }
+    
+    
+    .txt > p{
+        /* border: 1px solid red;  */
+
+        font-size: 1.6rem;
+        color: #B3B3B3;
+        /* margin-bottom: 20px; */
+        padding-right: 0px;
+    }
+    
+    
 }
+
