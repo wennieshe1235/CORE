@@ -76,7 +76,8 @@ header{
 
 /*麵包屑*/
 .breadcrumbs{
-    width: 1140px;
+    width: 100%;
+    max-width: 1140px;
     padding: 5px 0;
     margin: 0 auto;
     /* border: 1px solid red; */
@@ -187,7 +188,8 @@ header{
 }
 
 .box{
-    width: 1140px;
+    width: 100%;
+    max-width: 1140px;
     padding: 12px 0;
     margin: 0 auto;
     /* border: 1px solid red; */
@@ -270,4 +272,114 @@ header{
     /* border: 1px solid red; */
     /* padding-right: 40px; */
 
+}
+
+
+/* ==========RWD斷點============== */
+
+@media screen and (max-width: 1160px) {
+    /* 第一個斷點提早設定，最新情報圖片會擠到邊邊 */
+    /* 先看wrapper最大寬度是多少，先設定一個斷點>>>width :auto */
+    .wrapper{
+      width: auto;
+    }
+
+    .itemscope{
+        padding: 20px 0;
+        /* border: 1px solid red; */
+        margin: 0 4% 0;
+    }
+    .box{
+        width: 90%;
+        max-width: 1140px;
+        padding: 12px 0;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+        
+    
+        /* display: flex; */
+        
+    }
+}
+
+@media screen and (max-width: 930px) {
+    /* 先看wrapper最大寬度是多少，先設定一個斷點>>>width :auto */
+    .wrapper{
+      width: auto;
+    }
+
+
+    /* 麵包屑往內縮，margin往外推，記住可以將斷點設定避開背景的子層，不然會撐開背景的寬度，讓頁面無法填滿 */
+
+
+    .itemscope{
+        padding: 20px 0;
+        /* border: 1px solid red; */
+        margin: 0 4% 0;
+    }
+    .itemscope li {
+        /* border: 1px solid red; */
+    
+        font-size: 1.6rem;
+        color: #3e3e3e;
+
+    
+    }
+    .itemscope > li:nth-child(1){
+        font-size: 1.6rem;
+    }
+    
+   
+
+}
+
+
+
+
+@media screen and (max-width: 765px) {
+
+    .content-bg{
+        /* border: 1px solid blue; */
+        width: 90%;
+        height: auto;
+        background-color: #EDE1D1;
+        border-radius: 100px 100px  0 0;
+        margin: 0 auto;
+        
+    }
+
+    .item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 80%;
+        padding: 36px 0;
+        border-bottom: 1px solid #5F5E5E;
+        /* border: 1px solid blue; */
+    
+    }
+   
+    .inner{
+        margin-left: 0;
+        margin-top: 20px;
+        /* border: 1px solid blue; */
+        flex-basis: 62%;
+    
+    }
+
+    .item figure{
+        width: 100%;
+        /* height: 20%; */
+    }
+    
+    .item figure > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    
 }
