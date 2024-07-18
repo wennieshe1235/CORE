@@ -75,12 +75,12 @@ a{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid red; 
+    /* border: 1px solid red;  */
 
 }
 
 .content-1 h2{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     writing-mode: vertical-rl; /* 垂直排版:旋轉整個文字方塊 */
     /* text-orientation: upright; 文字直立方向 */
     font-weight: 800;
@@ -319,7 +319,7 @@ a{
         max-width: 1140px;
         padding: 12px 0;
         margin: 0 auto;
-        border: 1px solid red;
+        /* border: 1px solid red; */
         
     }
 
@@ -413,12 +413,12 @@ a{
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        border: 1px solid red; 
+        /* border: 1px solid red;  */
     
     }
 
     .content-1 h2{
-        border: 1px solid red;
+        /* border: 1px solid red; */
         writing-mode: horizontal-tb; 
         font-weight: 800;
         font-size: 5rem;
@@ -434,8 +434,10 @@ a{
     }
 
     .category{
+        /* border: 1px solid red; */
+        width: 80%;
         color: #fff;
-        background: #969696;
+        background: #ad9f88;
         border-radius: 23px;
         margin-bottom: 16px;
         align-items: center;
@@ -444,12 +446,25 @@ a{
 
     }
 
-    .category-header span{
-        border: 1px solid red;
+    .category::after{
+        position: absolute;
+        top: 50%;
+        right: 4%;
+        transform: translateY(-50%);
+        /* transform: translateY(-50%) rotate(180deg); */
+        content: "";
+        width: 22px;
+        height: 20px;
+        background: url(../img/chevron-down-solid.svg) center center / contain no-repeat;
+        transition: transform .3s;
 
+    }
+
+    .category-header span{
+        /* border: 1px solid red; */
+        
         font-weight: 800;
         font-size: 2rem;
-        text-transform: uppercase;
         padding: 12px;
         text-align: left;
         position: relative;
@@ -465,24 +480,37 @@ a{
         display: none;
     }
 
+    .content-2 p{
+        /* border: 1px solid blue; */
+        text-align: left;
+        font-weight: 800;
+        font-size: 1.2rem;
+    
+    }
+
+    /* -------------控制grid產品等比例縮小-------- */
+    .product-item {
+        aspect-ratio: 1 / 1; /* 設置寬高比為1:1，保持正方形 */
+        /* border: 1px solid red; */
+
+        width: 100%; /* 確保區塊寬度自適應父容器 */
+    }
+    
+    .product-item img {
+        width: 85%;
+        height: 85%;
+        object-fit: cover; /* 確保圖片填充區塊且保持比例 */
+    }
+    
     .product {
-
-        border: 1px solid red; 
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px; /* 你可以調整這個間距來控制產品之間的空隙 */
-        
-        
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 使產品區塊自適應寬度 */
+        gap: 20px; /* 設置區塊間距 */
+    }
+    
+    /* ------------------------------------ */
 
-        
-      }
-
-      .product-item{
-        border: 1px solid blue;
-      }
-      
-
-      .product-item > a{
+    .product-item > a{
         /* border: 1px solid blue;  */
         display: block;
         width: 100%;
@@ -500,9 +528,8 @@ a{
         
     }
 
-    
-    
 }
+
 
 
 
