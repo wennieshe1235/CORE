@@ -27,6 +27,7 @@ a{
 #wrapper {
     /* width: 1140px; */
     /* wrapper寬度不適合限制固定寬度，會影響不同尺寸的呈現狀況 */
+    width: 100%;
     margin: 0 auto;
     margin: 0;
     padding: 0;
@@ -82,7 +83,8 @@ a{
 
 /*麵包屑*/
 .breadcrumbs{
-    width: 1140px;
+    width: 100%;
+    max-width: 1140px;
     padding: 5px 0;
     margin: 0 auto;
     /* border: 1px solid red; */
@@ -170,8 +172,8 @@ a{
 
 .content-1{
     /* border: 1px solid red;  */
-
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     padding: 40px 0;
     margin: 0 auto;
     /* display: flex; */
@@ -383,6 +385,228 @@ a{
 
 }
 
+/* ==========RWD斷點============== */
+
+@media screen and (max-width: 1160px) {
+    /* 第一個斷點提早設定，標語和介紹文會擠到邊邊 */
+    /* 先看wrapper最大寬度是多少，先設定一個斷點>>>width :auto */
+    .wrapper{
+      width: auto;
+    }
+
+    .itemscope{
+        padding: 20px 0;
+        /* border: 1px solid red; */
+        margin: 0 4% 0;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    /* 先看wrapper最大寬度是多少，先設定一個斷點>>>width :auto */
+    .wrapper{
+      width: auto;
+    }
+
+
+    /* 麵包屑往內縮，margin往外推，記住可以將斷點設定避開背景的子層，不然會撐開背景的寬度，讓頁面無法填滿 */
+
+
+    .itemscope{
+        padding: 20px 0;
+        /* border: 1px solid red; */
+        margin: 0 4% 0;
+    }
+    .itemscope li {
+        /* border: 1px solid red; */
+    
+        font-size: 1.6rem;
+        color: #3e3e3e;
+
+    
+    }
+    /* 標語介紹文區往內縮，margin往外推 */
+    /* .inner01{
+        gap: 0 25px;
+        margin: 12px 4% 0;
+    } */
+
+   
+
+}
+
+@media screen and (max-width: 908px) {
+     /* 斷點提早設定，輸入欄擠到偽元素弧形背景。需要縮小輸入欄 */
+     .fill > input{
+        /* border: 1px solid red; */
+        width: 80%;
+        height: 40px;
+        padding: 0 8px;
+        font-size: 20px;
+    }
+
+    .inner03 > .code-input > .fill > textarea{
+        /* border: 1px solid red; */
+        width: 80%;
+        height: 200px;
+        /* border-radius: 4px; */
+        padding: 8px 8px;
+        font-size: 20px;
+    }
+
+    /* 欄位名稱往內縮，margin-left */
+
+    .inner01 > p{
+        /* border: 1px solid red; */
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        flex-basis: 20%;
+        margin-left: 8%;
+    
+    }
+
+    .inner02 > p{
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        flex-basis: 20%;
+        margin-left: 8%;
+
+    
+    }
+
+    .inner03 > p{
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        flex-basis: 20%;
+        margin-left: 8%;
+
+    
+    }
+
+
+
+    /* 隱私權政策往內縮，縮小寬度 */
+    .inner04{
+        margin-left: 8%;
+        /* border: 1px solid red; */
+        align-items: center;
+        margin-bottom: 24px;
+    
+    
+    }
+    
+
+    /* 送出按鈕往內縮，縮小寬度 */
+
+    .inner05{
+        /* border: 1px solid red; */
+        width: 84%;
+        margin: 0 auto;
+    }
+    
+}
+
+
+@media screen and (max-width: 765px) {
+
+    .content-bg{
+        /* border: 1px solid blue; */
+        width: 90%;
+        height: auto;
+        background-color: #EDE1D1;
+        border-radius: 100px 100px  0 0;
+        margin: 0 auto;
+        
+    }
+    .inner01 {
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 80%;
+    }
+
+    .inner01 > p {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 8px;
+        margin-left: 0;
+    }
+
+    .code-input {
+        width: 100%;
+        /* border: 1px solid red; */
+        margin-bottom: 24px;
+    }
+
+    .fill > input {
+        width: 94%;
+        height: 40px;
+        border: 1px solid #ccc;
+        padding: 0 8px;
+        font-size: 20px;
+        transition: border-color 0.3s ease-in-out;
+    }
+
+    .inner03 > .code-input > .fill > textarea {
+        width: 94%;
+        height: 200px;
+        border: 1px solid #ccc;
+        padding: 8px 8px;
+        font-size: 20px;
+        transition: border-color 0.3s ease-in-out;
+    }
+
+    .inner02, .inner03 {
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 80%;
+    }
+
+    .inner02 > p, .inner03 > p {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 8px;
+        margin-left: 0;
+    }
+
+    .inner02 .code-input, .inner03 .code-input {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    /* 隱私權政策往內縮，縮小寬度 */
+    .inner04{
+        width: 80%;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+        align-items: center;
+        margin-bottom: 24px;
+    
+    
+    }
+    
+
+    /* 送出按鈕往內縮，縮小寬度 */
+
+    .inner05{
+        /* border: 1px solid red; */
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+    
 
 
 
