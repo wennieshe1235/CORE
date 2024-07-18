@@ -50,7 +50,8 @@ a{
     /* margin-right: 60px; */
     /* margin-left: 60px; */
     /* padding-left: 60px; */
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     height: auto;
     background-color: #D7BB9A;
     border-radius: 600px 600px  0 0;
@@ -62,8 +63,8 @@ a{
 
 .product-content{
     /* border: 1px solid red;  */
-
-    width: 1140px;
+    width: 100%;
+    max-width: 1140px;
     /* padding: 40px 0; */
     margin: 0 auto;
     /* display: flex; */
@@ -73,19 +74,27 @@ a{
 .content-1{
     display: flex;
     align-items: center;
-    /* border: 1px solid red;  */
+    justify-content: space-between;
+    border: 1px solid red; 
 
 }
 
 .content-1 h2{
+    border: 1px solid red;
     writing-mode: vertical-rl; /* 垂直排版:旋轉整個文字方塊 */
     /* text-orientation: upright; 文字直立方向 */
     font-weight: 800;
     font-size: 7.5rem;
     color: #8B5E3C;
-    margin-right: 160px; /* 與商品列表保持距離 */
+    margin-right: 0%; /* 與商品列表保持距離 */
     text-align: center; /* 垂直居中 */
 }
+
+.space{
+    width: 121px;
+    height: 387px;
+}
+
 
 
 .category-header span{
@@ -100,7 +109,7 @@ a{
 .category-header span::after{
     content: "";
     display: block;
-    width: 456px;
+    width: 38vw;
     height: 1px;
     background-color: #7f7f7f;
     position: absolute;
@@ -109,7 +118,6 @@ a{
     transform: translateY(-50%);/*將偽元素垂直居中，由於 top: 50% 將偽元素的頂部邊緣定位在父元素高度的一半處，所以需要將偽元素自身向上移動一半的高度，這樣才能垂直居中。*/
 }
 
-/* .btn{} */
 
 .btn ul{
     /* border: 1px solid red;  */
@@ -184,10 +192,9 @@ a{
 }
 
 
-.product-item1{
+.product-item{
     /* border: 1px solid red;  */
-    grid-column: 1/2;
-    grid-row: 1/2;
+    
     position: relative;
     
 
@@ -196,7 +203,8 @@ a{
 .salestag-love {
     /* border: 1px solid blue; */
     display: flex;
-    width: 254px;
+    width: 90%;
+    max-width: 254px;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
@@ -229,11 +237,13 @@ a{
 }
 
 
-.product-item1 > a{
+.product-item > a{
     /* border: 1px solid blue;  */
     display: block;
-    width: 270px;
-    height: 270px;
+    width: 100%;
+    height: 100%;
+    max-width: 270px;
+    max-height: 270px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -245,7 +255,7 @@ a{
     
 }
 
-.product-item1 > a::after {
+.product-item > a::after {
     content: "";
     position: absolute;
     border-radius: 20px;
@@ -258,721 +268,18 @@ a{
     z-index: 100;
 }
 
-.product-item1 > a:hover::after {
+.product-item > a:hover::after {
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
 }
 
 
-.product-item1 > a > img{
+.product-item > a > img{
     display: block;
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
 
-}
-
-
-.product-item2{
-    grid-column: 2/3;
-    grid-row: 1/2;
-    position: relative;
-}
-
-
-.product-item2 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-    
-}
-
-.product-item2 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item2 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item2 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-/* .product-item2 > a > img{
-    
-} */
-
-.product-item3{
-    grid-column: 3/4;
-    grid-row: 1/2;
-    position: relative;
-
-}
-
-.product-item3 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-    
-}
-
-.product-item3 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item3 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item3 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-
-.product-item4{
-    grid-column: 4/5;
-    grid-row: 1/2;
-    position: relative;
-
-}
-
-.product-item4 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-    
-}
-
-.product-item4 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-.product-item4 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item4 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-
-.product-item5{
-    grid-column: 1/2;
-    grid-row: 2/3;
-    position: relative;
-
-}
-
-.product-item5 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-}
-
-.product-item5 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item5 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item5 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-
-.product-item6{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    position: relative;
-
-}
-
-
-.product-item6 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-}
-
-.product-item6 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-.product-item6 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item6 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-
-.product-item7{
-    grid-column: 3/4;
-    grid-row: 2/3;
-    position: relative;
-
-
-}
-
-.product-item7 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-}
-
-.product-item7 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item7 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item7 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-
-.product-item8{
-    grid-column: 4/5;
-    grid-row: 2/3;
-    position: relative;
-
-}
-
-.product-item8 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-}
-
-.product-item8 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item8 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item8 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-.product-item9{
-    grid-column: 1/2;
-    grid-row: 3/4;
-    position: relative;
-
-}
-
-.product-item9 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-}
-
-.product-item9 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item9 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item9 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-.product-item10{
-    grid-column: 2/3;
-    grid-row: 3/4;
-    position: relative;
-
-}
-
-.product-item10 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-}
-
-.product-item10 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item10 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item10 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-.product-item11{
-    grid-column: 3/4;
-    grid-row: 3/4;
-    position: relative;
-
-}
-
-.product-item11 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-}
-
-.product-item11 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item11 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item11 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-.product-item12{
-    grid-column: 4/5;
-    grid-row: 3/4;
-    position: relative;
-
-}
-
-.product-item12 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-}
-
-.product-item12 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item12 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item12 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-.product-item13{
-    grid-column: 1/2;
-    grid-row: 4/5;
-    position: relative;
-
-}
-
-.product-item13 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-}
-
-.product-item13 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item13 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item13 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-.product-item14{
-    grid-column: 2/3;
-    grid-row: 4/5;
-    position: relative;
-
-}
-
-.product-item14 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-}
-
-.product-item14 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item14 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item14 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-.product-item15{
-    grid-column: 3/4;
-    grid-row: 4/5;
-    position: relative;
-
-}
-
-.product-item15 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-}
-
-.product-item15 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item15 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item15 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-.product-item16{
-    grid-column: 4/5;
-    grid-row: 4/5;
-    position: relative;
-
-}
-
-.product-item16 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-}
-
-.product-item16 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item16 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item16 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
 }
 
 
@@ -997,6 +304,206 @@ a{
     color: #333;
 
 }
+
+/* ==========RWD斷點============== */
+
+@media screen and (max-width: 1100px) {
+    /* 第一個斷點提早設定，商品圖片往內縮會開始變形 */
+    /* 先看wrapper最大寬度是多少，先設定一個斷點>>>width :auto */
+    .wrapper{
+      width: auto;
+    }
+
+    .content-2{
+        width: 90%;
+        max-width: 1140px;
+        padding: 12px 0;
+        margin: 0 auto;
+        border: 1px solid red;
+        
+    }
+
+    .product-item > a{
+        /* border: 1px solid blue;  */
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 240px;
+        max-height: 240px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f2f2f2;
+        border-radius: 20px;
+        position: relative;
+        
+    
+        
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    /* 商品名稱字體縮小 */
+    .wrapper{
+      width: auto;
+    }
+
+    
+    .product-item > a{
+        /* border: 1px solid blue;  */
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 200px;
+        max-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f2f2f2;
+        border-radius: 20px;
+        position: relative;
+        
+        
+    }
+    .product-name > a > h3{
+        display: block;
+        font-weight: 800;
+        font-size: 1.6rem;
+        color: #333;   
+    }
+
+
+}
+
+@media screen and (max-width: 800px) {
+    /* 商品名稱字體縮小 */
+    .wrapper{
+      width: auto;
+    }
+
+    
+    .product-item > a{
+        /* border: 1px solid blue;  */
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 180px;
+        max-height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f2f2f2;
+        border-radius: 20px;
+        position: relative;
+        
+        
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width: 765px) {
+
+    .content-1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid red; 
+    
+    }
+
+    .content-1 h2{
+        border: 1px solid red;
+        writing-mode: horizontal-tb; 
+        font-weight: 800;
+        font-size: 5rem;
+        color: #8B5E3C;
+        margin-right: 0%; /* 與商品列表保持距離 */
+        text-align: center; /* 垂直居中 */
+        margin-bottom: 4%;
+    }
+    
+
+    .space{
+        display: none;
+    }
+
+    .category{
+        color: #fff;
+        background: #969696;
+        border-radius: 23px;
+        margin-bottom: 16px;
+        align-items: center;
+        padding: 0;
+        position: relative
+
+    }
+
+    .category-header span{
+        border: 1px solid red;
+
+        font-weight: 800;
+        font-size: 2rem;
+        text-transform: uppercase;
+        padding: 12px;
+        text-align: left;
+        position: relative;
+    }
+    
+
+    .category-header span::after{
+        display: none;
+
+    }
+
+    .btn{
+        display: none;
+    }
+
+    .product {
+
+        border: 1px solid red; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px; /* 你可以調整這個間距來控制產品之間的空隙 */
+        
+        
+
+        
+      }
+
+      .product-item{
+        border: 1px solid blue;
+      }
+      
+
+      .product-item > a{
+        /* border: 1px solid blue;  */
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 320px;
+        max-height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f2f2f2;
+        border-radius: 20px;
+        position: relative;
+        
+        
+        
+    }
+
+    
+    
+}
+
 
 
 
