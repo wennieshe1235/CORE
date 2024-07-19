@@ -63,13 +63,14 @@ a{
 
 }
 
-.coverflow > a > img{
+.coverflow > a > img:first-child{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
+}
 
-    
+.coverflow > a > img:last-child{
+   display: none;
 }
 
 /*更多商品*/
@@ -161,7 +162,8 @@ a{
 
 /*麵包屑*/
 .breadcrumbs{
-    width: 1140px;
+    width: 100%;
+    max-width: 1140px;
     padding: 5px 0;
     margin: 0 auto;
     /* border: 1px solid red; */
@@ -314,7 +316,8 @@ a{
 .salestag-love {
     /* border: 1px solid blue; */
     display: flex;
-    width: 254px;
+    width: 90%;
+    max-width: 254px;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
@@ -410,4 +413,232 @@ a{
     font-size: 1.6rem;
     font-weight: 800;
 }
+
+
+/* ==========RWD斷點============== */
+
+@media screen and (max-width: 1160px) {
+    /* 第一個斷點提早設定，商品圖片往內縮會開始變形 */
+    /* 先看wrapper最大寬度是多少，先設定一個斷點>>>width :auto */
+    
+
+    .wrapper{
+        width: auto;
+      }
+  
+      .itemscope{
+          padding: 20px 0;
+          /* border: 1px solid red; */
+          margin: 0 4% 0;
+      }
+
+    .content-1{
+        width: 95%;
+        max-width: 1140px;
+        padding: 12px 0;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+        
+    }
+
+}
+
+@media screen and (max-width: 1148px){
+    /* 斷點提早設定，左側選單會碰到輪播圖 */
+    .content-1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    /* 麵包屑字體放大 */
+    .itemscope li {
+        /* border: 1px solid red; */
+    
+        font-size: 1.6rem;
+        color: #3e3e3e;
+    }
+
+    
+    .product-item > a{
+        /* border: 1px solid blue;  */
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 200px;
+        max-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f2f2f2;
+        border-radius: 20px;
+        position: relative;
+        
+        
+    }
+    .product-name > a > h3{
+        display: block;
+        font-weight: 800;
+        font-size: 1.6rem;
+        color: #333;   
+    }
+
+    .content-1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        /* border: 1px solid red;  */
+    
+    }
+
+    
+
+    .text{
+        /* border: 1px solid red; */
+        width: 98%;
+        color: #fff;
+        background: #dba57f;
+        border-radius: 23px;
+        margin-bottom: 16px;
+        align-items: center;
+        padding: 6.5px 0 6.5px 12px;
+        position: relative
+        
+
+    }
+
+    .text::after{
+        position: absolute;
+        top: 50%;
+        right: 4%;
+        transform: translateY(-50%);
+        /* transform: translateY(-50%) rotate(180deg); */
+        content: "";
+        width: 22px;
+        height: 20px;
+        background: url(../img/chevron-down-solid.svg) center center / contain no-repeat;
+        transition: transform .3s;
+
+    }
+
+    .text-item > h3{
+        color: #fff;
+    }
+
+    .text-item > a{
+        display: none;
+    }
+
+    .text-item h3:after{
+        display: none;
+    
+    }
+
+    .vision-product{
+        /* border: 1px solid red; */
+        width: 100%;
+        /* max-width: 960px; */
+    }
+    #sliderBoard {
+        
+        width: 100%;
+        /* max-width: 960px; */
+        height: auto;
+    }
+
+    #sliderBoard img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .slogan{
+        position: absolute;
+        top: 668px;
+        left: -68px;
+        display: flex;
+        flex-direction: column-reverse;
+        display: none;
+    
+    }
+    
+    .product-item {
+        aspect-ratio: 1 / 1; /* 設置寬高比為1:1，保持正方形 */
+        /* border: 1px solid red; */
+
+        width: 100%; /* 確保區塊寬度自適應父容器 */
+    }
+    
+    .product-item img {
+        width: 85%;
+        height: 85%;
+        object-fit: cover; /* 確保圖片填充區塊且保持比例 */
+    }
+    
+    .product {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 使產品區塊自適應寬度 */
+        gap: 20px; /* 設置區塊間距 */
+    }
+    
+    .product-item > a{
+        /* border: 1px solid blue;  */
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 320px;
+        max-height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f2f2f2;
+        border-radius: 20px;
+        position: relative;
+        
+    }
+
+    .instagram-tag {
+        /* border: 1px solid blue; */
+        display: block;
+        width: 90%;
+        max-width: 254px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        z-index: 10;
+    
+    }
+    
+    
+    .instagram-tag > a > i{
+        display: block;
+        font-size: 36px;
+        color: #989898;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 395px){
+    .coverflow > a > img:first-child{
+        display: none;
+       
+    }
+    
+    .coverflow > a > img:last-child{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+}
+
 
