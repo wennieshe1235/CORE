@@ -597,7 +597,7 @@ a{
 
     .top-left {
         /* border: 1px solid red; */
-        width: 90%;
+        width: 98%;
         /* 記得一定要寬度，不然子元素的.swiper-slide img寬度會把自己撐爆 */
         height: auto;
         margin-right: 0px; /* 添加間隙 */
@@ -616,7 +616,7 @@ a{
     
 
     .top-right{
-        width: 90%; /* 保证左右部分宽度一致 */
+        width: 98%; /* 保证左右部分宽度一致 */
         margin: 0 auto; /* 水平居中 */
         
     }
@@ -673,7 +673,7 @@ a{
     }
 
     .product-description{
-        width: 90%;
+        width: 98%;
         margin: 0 auto;
     }
     
@@ -685,94 +685,6 @@ a{
         width: 100%;
     }
 
-    .content-1 h2{
-        /* border: 1px solid red; */
-        writing-mode: horizontal-tb; 
-        font-weight: 800;
-        font-size: 5rem;
-        color: #8B5E3C;
-        margin-right: 0%; /* 與商品列表保持距離 */
-        text-align: center; /* 垂直居中 */
-        margin-bottom: 4%;
-    }
     
-
-    .category{
-        /* border: 1px solid red; */
-        width: 80%;
-        color: #fff;
-        background: #ad9f88;
-        border-radius: 23px;
-        margin-bottom: 16px;
-        align-items: center;
-        padding: 0;
-        position: relative
-
-    }
-
-    .category::after{
-        position: absolute;
-        top: 50%;
-        right: 4%;
-        transform: translateY(-50%);
-        /* transform: translateY(-50%) rotate(180deg); */
-        content: "";
-        width: 22px;
-        height: 20px;
-        background: url(../img/chevron-down-solid.svg) center center / contain no-repeat;
-        transition: transform .3s;
-
-    }
-
-    .category-header span{
-        /* border: 1px solid red; */
-        
-        font-weight: 800;
-        font-size: 2rem;
-        padding: 12px;
-        text-align: left;
-        position: relative;
-    }
-    
-
-    .category-header span::after{
-        display: none;
-
-    }
-
-    .btn{
-        display: none;
-    }
-
-    .content-2 p{
-        /* border: 1px solid blue; */
-        text-align: left;
-        font-weight: 800;
-        font-size: 1.2rem;
-    
-    }
-
-    /* -------------控制grid產品等比例縮小-------- */
-    .product-item {
-        aspect-ratio: 1 / 1; /* 設置寬高比為1:1，保持正方形 */
-        /* border: 1px solid red; */
-
-        width: 100%; /* 確保區塊寬度自適應父容器 */
-    }
-    
-    .product-item img {
-        width: 85%;
-        height: 85%;
-        object-fit: cover; /* 確保圖片填充區塊且保持比例 */
-    }
-    
-    .product {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 使產品區塊自適應寬度 */
-        gap: 20px; /* 設置區塊間距 */
-    }
-    
-    /* ------------------------------------ */
-
 
 }
