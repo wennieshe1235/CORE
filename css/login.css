@@ -45,16 +45,18 @@ a{
 .product-bg{
     /* border: 1px solid blue; */
     padding-bottom: 40px;
+    width: 100%;
 
 }
 
 .content-1{
     border: 1px solid #757575;
     border-radius: 20px; 
-
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     
     margin: 0 auto;
+    box-sizing: border-box;
     /* display: flex; */
     
 }
@@ -63,6 +65,7 @@ a{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     
 
 }
@@ -119,8 +122,8 @@ a{
 
 .inner-content{
     /* border: 1px solid red;  */
-
-    width: 400px;
+    width: 100%; /* 設置為 100% 以便隨 .content-1 縮放 */
+    max-width: 400px; /* 保持最大寬度為 400px */
     padding: 40px 0;
     margin: 0 auto;
     /* display: flex; */
@@ -284,4 +287,25 @@ a{
     line-height: 48px;
     border: 1px solid #B1AA9C;
 
+}
+
+
+/* ==========RWD斷點============== */
+
+@media screen and (max-width: 665px) {
+    .wrapper{
+        width: auto;
+      }
+
+    .inner-content {
+        width: 90%;
+    }
+
+    .content-1{
+        width: 90%;
+       
+    
+    }
+
+    
 }
