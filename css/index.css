@@ -33,7 +33,14 @@ a{
 
 /* ==============(header大圖輪播)================ */
 
+.mv_txt{
+    display: none;
 
+}
+
+.rwd-vision{
+    display: none;
+}
 
 .vision{
     /* border: 1px solid green;  */
@@ -529,10 +536,12 @@ main{
 
 /* 新增推薦商品區域的樣式 */
 .recommendation {
+    
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    display: none;
 }
 
 .recommendation label {
@@ -660,13 +669,119 @@ main{
 
 }
 
+@media screen and (max-width: 912px){
+
+
+    .mv_txt{
+        display: block;
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+    
+    }
+
+    .mv_txt h2 {
+        font-size: 60px;
+        font-weight: 300;
+        letter-spacing: 1rem;
+        line-height: 1;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+    }
+
+
+    .mv_txt p {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: .1em;
+        line-height: 1.666;
+    }
+
+    .vision{
+        display: none;
+    }
+    
+    .rwd-vision{
+        /* border: 1px solid green;  */
+        display: flex;
+        align-items: start;
+        justify-content: end;
+        width: 100%;
+        height: auto;
+
+    
+    
+    }
+    
+    /* 增加輪播圖功能 */
+    *{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    .imageRwd{
+        width: 100%;
+        height: 700px;
+        object-fit: cover;
+        display: block; /*確保圖片填滿輪播區域*/
+    }
+    #sliderBoardRwd{	/* div */
+        position: relative; /* 新增這行 */
+        /* border: 1px solid red; */
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    
+        overflow: hidden;
+    }
+    #contentRwd{		/* ul */
+        position: relative;
+        width: 100%;
+        height: 100%;
+    
+    }
+    #contentRwd li{	/* li */
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
+    /* circle button */
+    #contentButtonRwd{
+        position: absolute; /* 新增這行 */
+        bottom: 10px; /* 可以根據需要調整位置 */
+        left: 50%;
+        transform: translateX(-50%); /* 水平居中 */
+        border: none; /* 去掉邊框 */
+        text-align: center;
+        height: 50px;
+    }
+    #contentButtonRwd li{
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin: 8px;
+    
+        display: inline-block;
+        cursor: pointer; /* 增加鼠標變成手型 */
+    }
+    #contentButtonRwd li.clicked{
+        background-color: #666;
+    }
+
+
+}
+
+
 @media screen and (max-width: 765px){
 
 
-    .image{
-        width: 100%;
-        height: 700px;
-    }
+    
 
     .buttons ul{
         /* border: 1px solid blue; */
