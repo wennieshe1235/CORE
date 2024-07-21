@@ -65,8 +65,8 @@ a{
 
 .cart-content{
     /* border: 1px solid red;  */
-
-    width: 1140px;
+    width: 100%;
+    max-width: 1140px;
     padding: 32px 0;
     margin: 0 auto;
     /* display: flex; */
@@ -119,6 +119,9 @@ a{
     
 }
 
+.scopeRWD{
+    display: none;
+}
 
 .scope{
     /* border: 1px solid blue; */
@@ -230,11 +233,15 @@ a{
     
 }
 
+
+
 .col-xs-1 > a:first-child{
     /* border: 1px solid blue; */
     display: block;
-    width: 160px;
-    height: 160px;
+    width: 100%;
+    height: 100%;
+    max-width: 160px;
+    max-height: 160px;
     display: flex;
     justify-content: center;
     
@@ -251,13 +258,10 @@ a{
 }
 
 
-.col-xs-1 > a:last-child > p{
-    display: block;
-}
 
-.col-xs-1 > a:last-child {
+
+.col-xs-1 > div > a > h1 {
     /* border: 1px solid blue;  */
-
     display: block;
     font-size: 1.6rem;
     font-weight: 800;
@@ -265,11 +269,33 @@ a{
     
 }
 
-.col-xs-1 > a:last-child > p{
+.col-xs-1 >  div > a > p{
     font-size: 1.2rem;
     font-weight: 500;
     color: #A09E9B;
+    
+
 }
+
+.col-xs-1 > div > .innerRWD{
+    
+    /* border: 1px solid blue; */
+    display: none;
+}
+
+
+
+.col-xs-1 > div > .RWD-P{
+    display: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #333;
+    /* border: 1px solid blue; */
+
+
+}
+
+
 
 .col-xs-2{
     vertical-align: middle;
@@ -278,6 +304,7 @@ a{
     flex-basis: auto;
     
 }
+
 
 
 .sale-price > a:first-child{
@@ -378,7 +405,7 @@ a{
     /* border: 1px solid blue;  */
     position: absolute;
     left: 0;
-    top: 160px;
+    top: 100%;
     content: "";
     display: block;
     width: 100%;
@@ -664,7 +691,8 @@ a{
 
 
 .content-3{
-    /* width: 100%; */
+    width: 100%;
+
     margin: 0 auto;
     /* border: 1px solid red; */
     margin-top: 40px;
@@ -677,7 +705,7 @@ a{
     /* border: 1px solid blue;  */
     position: absolute;
     left: 0;
-    top: 412px;
+    top: 104%;
     content: "";
     display: block;
     width: 100%;
@@ -711,11 +739,15 @@ a{
 .refer-product{
     /* border: 1px solid red; */
 
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 18px;
+    margin-top: 20px;
+    justify-content: center;
 }
 
-.product-item1{
+.product-item{
     /* flex-grow: 1; */
     /* border: 1px solid red;  */
     position: relative;
@@ -726,7 +758,8 @@ a{
 .salestag-love {
     /* border: 1px solid blue; */
     display: flex;
-    width: 254px;
+    width: 90%;
+    max-width: 254px;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
@@ -759,11 +792,13 @@ a{
 }
 
 
-.product-item1 > a{
+.product-item > a{
     /* border: 1px solid blue;  */
     display: block;
-    width: 270px;
-    height: 270px;
+    width: 100%;
+    height: 100%;
+    max-width: 270px;
+    max-height: 270px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -773,7 +808,7 @@ a{
     
 }
 
-.product-item1 > a > img{
+.product-item > a > img{
     display: block;
     max-width: 100%;
     max-height: 100%;
@@ -781,7 +816,7 @@ a{
 
 }
 
-.product-item1 > a::after {
+.product-item > a::after {
     content: "";
     position: absolute;
     border-radius: 20px;
@@ -794,146 +829,12 @@ a{
     z-index: 100;
 }
 
-.product-item1 > a:hover::after {
+.product-item > a:hover::after {
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
 }
 
-.product-item2{
-    /* flex-grow: 1; */
-    position: relative;
-}
 
-
-.product-item2 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-    
-}
-
-.product-item2 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item2 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item2 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-.product-item3{
-    /* flex-grow: 1; */
-    position: relative;
-
-}
-
-.product-item3 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-    
-}
-
-.product-item3 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-.product-item3 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item3 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
-
-.product-item4{
-    /* flex-grow: 1; */
-    position: relative;
-
-}
-
-.product-item4 > a{
-    /* border: 1px solid blue;  */
-    display: block;
-    width: 270px;
-    height: 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    position: relative;
-    
-}
-.product-item4 > a > img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-
-}
-
-.product-item4 > a::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 初始狀態為透明 */
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
-    z-index: 100;
-}
-
-.product-item4 > a:hover::after {
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* 懸停時的半透明暗灰色 */
-}
 
 .product-name > a{
     color: #333;
@@ -964,4 +865,282 @@ a{
     font-size: 1.8rem;
 
 }
+
+
+/* ==========RWD斷點============== */
+
+@media screen and (max-width: 1180px) {
+    /* 第一個斷點提早設定，標語和介紹文會擠到邊邊 */
+    /* 先看wrapper最大寬度是多少，先設定一個斷點>>>width :auto */
+    .wrapper{
+      width: auto;
+    }
+
+    .cart-content{
+        /* border: 1px solid red;  */
+        width: 90%;
+        max-width: 1140px;
+
+        
+    }
+
+    /* -------------控制grid產品等比例縮小-------- */
+    .product-item {
+        aspect-ratio: 1 / 1; /* 設置寬高比為1:1，保持正方形 */
+        /* border: 1px solid red; */
+
+        width: 100%; /* 確保區塊寬度自適應父容器 */
+    }
+    
+    .product-item img {
+        width: 85%;
+        height: 85%;
+        object-fit: cover; /* 確保圖片填充區塊且保持比例 */
+    }
+    
+    .refer-product {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 使產品區塊自適應寬度 */
+        gap: 18px; /* 設置區塊間距 */
+    }
+    
+    /* ------------------------------------ */
+
+    .product-item > a{
+        /* border: 1px solid blue;  */
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 270px;
+        max-height: 270px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f2f2f2;
+        border-radius: 20px;
+        position: relative;
+        
+        
+    }
+
+}
+
+@media screen and (max-width: 1075px){
+
+    .col-md-2{
+        display: none;
+    }
+
+    .col-md-3{
+        display: none;
+    }
+
+    .col-md-4{
+        display: none;
+    }
+
+    .col-xs-2{
+        display: none;
+    }
+
+    .col-xs-4{
+        display: none;
+    }
+
+    .col-xs-3{
+        display: none;
+    }
+
+
+    .col-xs-1 > div > a > h1 {
+        /* border: 1px solid blue;  */
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #333;
+        
+    }
+
+    .col-xs-1 > div > .innerRWD{
+    
+        /* border: 1px solid blue; */
+        display: block;
+    }
+    
+    
+    
+    .col-xs-1 > div > .RWD-P{
+        display: block;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: #333;
+        /* border: 1px solid blue; */
+    
+    
+    }
+    .col-xs-1 > a:first-child{
+        /* border: 1px solid blue; */
+        display: block;
+        width: 80%;
+        height: 80%;
+        max-width: 160px;
+        max-height: 160px;
+        display: flex;
+        justify-content: left;
+        
+        
+    }
+
+    .col-xs-1 > a:first-child > img{
+        display: block;
+        max-width: 80%;
+        max-height: 80%;
+        object-fit: cover;
+    
+    
+    }
+
+    .col-xs-1{
+        vertical-align: middle;
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 90%;
+        
+        
+    }
+    .col-xs-5{
+        vertical-align: middle;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 10%;
+    
+    }
+    
+    
+}
+
+
+@media screen and (max-width: 765px) {
+
+
+
+   
+
+    .content-2{
+        /* border: 1px solid blue;  */
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .left{
+        /* border: 1px solid blue; */
+        width: 100%; 
+        margin-bottom: 2.4rem;
+    }
+
+
+    .right{
+        /* border: 1px solid blue; */
+        width: 100%; 
+    }
+
+
+    .confirm{
+        flex-grow: 1;
+        flex-basis: 10%;
+        height: 45px;
+        display: block;
+        
+        font-size: 1.6rem;  
+       
+        line-height: 41px;
+        border: 0; 
+    }
+    
+    .confirm:hover{
+        flex-grow: 1;
+        height: 45px;
+        display: block;
+     
+        font-size: 1.6rem; 
+       
+        line-height: 41px;
+        border: 0; 
+    }
+
+
+    .fill{
+        flex-basis: 30%;
+
+    }
+
+
+
+
+    .content-2::after{
+        /* border: 1px solid blue;  */
+       /* display: none; */
+        position: absolute;
+        left: 0;
+        top: 102%;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1.2px;
+        background-color: #a7a7a7;
+        margin: 10px 0;
+    }
+
+    .product-item {
+        aspect-ratio: 1 / 1; /* 設置寬高比為1:1，保持正方形 */
+        /* border: 1px solid red; */
+
+        width: 100%; /* 確保區塊寬度自適應父容器 */
+    }
+    
+    .product-item img {
+        width: 85%;
+        height: 85%;
+        object-fit: cover; /* 確保圖片填充區塊且保持比例 */
+    }
+    
+    .refer-product {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* 使產品區塊自適應寬度 */
+        gap: 18px; /* 設置區塊間距 */
+    }
+    
+    /* ------------------------------------ */
+
+    .product-item > a{
+        /* border: 1px solid blue;  */
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 270px;
+        max-height: 270px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f2f2f2;
+        border-radius: 20px;
+        position: relative;
+        
+        
+    }
+    
+    .content-4 p{
+        font-size: 1.4rem;
+    
+    }
+    
+
+    
+}
+    
+
 

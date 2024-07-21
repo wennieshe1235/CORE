@@ -145,9 +145,7 @@ a{
     display: flex;
 }
 
-.icon li{
-    /* margin-left: 25px; */
-}
+
 
 .icon li >a{
     display: block;
@@ -375,6 +373,18 @@ footer{
     #main-sel li a {
         font-size: 1.2rem; /* 調整字體大小 */
         line-height: 30px; /* 調整行高 */
+    }
+
+    #main-sel li:hover a{
+        /* border: 1px solid blue; */
+        display: block;
+        text-align: center;
+        line-height: 42px;
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #e2a87b;
+        
+        
     }
     
     #main-sel>a img {
