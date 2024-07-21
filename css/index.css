@@ -423,7 +423,7 @@ main{
 }
 
 .content-2{
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     width: 100%;
     max-width: 1140px;
     margin: 0 auto;
@@ -448,48 +448,29 @@ main{
 .items-main{
     /* border: 1px solid blue; */
     width: 100%;
+    max-width: 986px;
     display: grid ;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 40px;
 } 
 
-
-.items-main .item-1{
-    grid-column: 1/2;
-    grid-row: 1/2;
+.item{
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
 }
 
-.items-main .item-2{
-    grid-column: 2/3;
-    grid-row: 1/2;
-}
-
-.items-main .item-3{
-    grid-column: 3/4;
-    grid-row: 1/2;
-}
-
-.items-main .item-4{
-    grid-column: 1/2;
-    grid-row: 2/3;
-}
-
-.items-main .item-5{
-    grid-column: 2/3;
-    grid-row: 2/3;
-}
-
-.items-main .item-6{
-    grid-column: 3/4;
-    grid-row: 2/3;
-}
 
 .items a{
 
+    border: 1px solid blue;
     display: block;
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
     background-color: #ede5e5;
     text-align: center;
     line-height: 300px;
@@ -576,4 +557,104 @@ main{
 .recommended-item p {
     margin: 10px 0;
     font-size: 1.4rem;
+}
+
+
+/* ==========RWD斷點============== */
+
+@media screen and (max-width: 1160px) {
+    /* 第一個斷點提早設定，商品圖片往內縮會開始變形 */
+    /* 先看wrapper最大寬度是多少，先設定一個斷點>>>width :auto */
+    
+
+    .wrapper{
+        width: auto;
+      }
+  
+   
+
+    .content-1{
+        width: 100%;
+        max-width: 1140px;
+        padding: 12px 0;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+        
+    }
+
+    .content-2{
+        width: 90%; 
+    }
+
+    .items-main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* 使產品區塊自適應寬度 */
+        gap: 20px; /* 設置區塊間距 */
+    }
+
+    .item {
+        aspect-ratio: 1 / 1; /* 設置寬高比為1:1，保持正方形 */
+        /* border: 1px solid red; */
+
+        width: 100%; /* 確保區塊寬度自適應父容器 */
+    }
+
+}
+
+@media screen and (max-width: 984px){
+    /* 斷點提早設定，左側選單會碰到輪播圖 */
+   
+
+
+    .items h2{
+        writing-mode: vertical-rl; /* 垂直排版:旋轉整個文字方塊 */
+        /* text-orientation: upright; 文字直立方向 */
+        font-weight: 800;
+        font-size: 7rem;
+        color: #8B5E3C;
+        margin-right: 10px; /* 與商品列表保持距離 */
+        text-align: center; /* 垂直居中 */
+    
+    }
+
+    .items-main{
+        /* border: 1px solid blue; */
+        width: 80%;
+        max-width: 986px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 使產品區塊自適應寬度 */
+        gap: 10px;
+    } 
+
+    .item{
+        width: 100%;
+        height: 100%;
+    }
+
+    .describe > h1{
+        /* border: 1px solid red; */
+        color: #D7AC89;
+        font-size: 6.5rem;
+       
+       
+    
+    }
+
+}
+
+
+
+@media screen and (max-width: 395px){
+    .coverflow > a > img:first-child{
+        display: none;
+       
+    }
+    
+    .coverflow > a > img:last-child{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
 }
