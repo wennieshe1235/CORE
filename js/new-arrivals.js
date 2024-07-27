@@ -56,3 +56,5 @@ $(function () {
         $('#contentButton li').not(`:eq(${buttonIndex})`).removeClass('clicked');
     }
 });
+
+
