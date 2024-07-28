@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for(let i = 0; i < preTotalArr.length; i++){
     
             sum = sum + parseInt(preTotalArr[i].textContent.replace('$', '').trim())
-            preTotal.innerHTML = `$${sum}`
+            preTotal.innerHTML = `NT$${sum}`
     
         }
        
@@ -97,12 +97,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     //計算總金額
     function updateTotalFee() {
-        const updateTotalFeeArr = [parseInt(preTotal.textContent.replace('$', '').trim()), parseInt(shippingprice)]
+        const updateTotalFeeArr = [parseInt(preTotal.textContent.replace('NT$', '').trim()), parseInt(shippingprice)]
         let sum = 0
         for(let i = 0; i < updateTotalFeeArr.length; i++){
             
             sum = sum +  updateTotalFeeArr[i]
-            totalFee.innerHTML = `$${sum}`
+            totalFee.innerHTML = `NT$${sum}`
     
         
        
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     shippingSelect.addEventListener('change', function(){
         const shippingOption = shippingSelect.options[shippingSelect.selectedIndex]
         shippingprice = shippingOption.dataset.price
-        shippingFee.innerHTML = `$${shippingprice}`
+        shippingFee.innerHTML = `NT$${shippingprice}`
         updateTotalFee()
         
         
@@ -203,7 +203,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const minus3 = document.querySelector('#minus3')
     const plus3 = document.querySelector('#plus3')
     const input3 = document.querySelector('#input3')
+    const unitPrice3 = document.querySelector('#p3')
+    const unitPrice3Text = unitPrice3.textContent //獲取a連結文字中的內容
+    const unitPrice3Number = parseInt(unitPrice3Text.replace('$', '').trim())
+    const cartAmount3 = parseInt(input3.value) * unitPrice3Number
     
+    const minus5 = document.querySelector('#minus5')
+    const plus5 = document.querySelector('#plus5')
+    const input5 = document.querySelector('#input5')
+    const unitPrice5 = document.querySelector('#p5')
+    const unitPrice5Text = unitPrice5.textContent //獲取a連結文字中的內容
+    const unitPrice5Number = parseInt(unitPrice5Text.replace('$', '').trim())
+    const cartAmount5 = parseInt(input5.value) * unitPrice5Number
+
+    
+    
+    function updatePreTotalRwd() {
+        const preTotalArrRwd = [parseInt(input3.value) * unitPrice3Number, parseInt(input5.value) * unitPrice5Number]
+        let sum = 0
+        for(let i = 0; i < preTotalArrRwd.length; i++){
+    
+            sum = sum + preTotalArrRwd[i]
+            preTotal.innerHTML = `NT$${sum}`
+    
+        }
+       
+    }
     
     minus3.addEventListener('click', function(){
         let currentValue = +(input3.value)
@@ -213,9 +238,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
         }
 
+        
+        
+
+
         //手機版點擊'+' '-'按鍵，商品購買的數量input增加或減少之後金額自動計算至"小計"
-        cartAmount.innerHTML = `$${(input4.value) * unitPriceNumber}` 
-        preTotal.innerHTML = `$${parseInt(cartAmount.textContent.replace('$', '').trim())}`
+        
+        updatePreTotalRwd()
+        updateTotalFee()
+         
+        
     
     
     });
@@ -229,15 +261,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         //手機版點擊'+' '-'按鍵，商品購買的數量input增加或減少之後金額自動計算至"小計"
-        cartAmount.innerHTML = `$${(input4.value) * unitPriceNumber}` 
-        preTotal.innerHTML = `$${parseInt(cartAmount.textContent.replace('$', '').trim())}`
+
+        updatePreTotalRwd()
+        updateTotalFee()
+        
         
     });
 
 
-    const minus5 = document.querySelector('#minus5')
-    const plus5 = document.querySelector('#plus5')
-    const input5 = document.querySelector('#input5')
+    
     
     
     minus5.addEventListener('click', function(){
@@ -249,8 +281,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         //手機版點擊'+' '-'按鍵，商品購買的數量input增加或減少之後金額自動計算至"小計"
-        cartAmount.innerHTML = `$${(input4.value) * unitPriceNumber}` 
-        preTotal.innerHTML = `$${parseInt(cartAmount.textContent.replace('$', '').trim())}`
+       
+        updatePreTotalRwd()
+        updateTotalFee()
+        
     
     
     });
@@ -262,10 +296,11 @@ document.addEventListener('DOMContentLoaded', function() {
             input5.value = currentValue + 1
     
         }
-        cartAmount.innerHTML = `$${(input4.value) * unitPriceNumber}` 
-        preTotal.innerHTML = `$${parseInt(cartAmount.textContent.replace('$', '').trim())}`
-
+      
         //手機版點擊'+' '-'按鍵，商品購買的數量input增加或減少之後金額自動計算至"小計"
+        
+        updatePreTotalRwd()
+        updateTotalFee()
         
     });
 
