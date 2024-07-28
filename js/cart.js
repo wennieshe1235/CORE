@@ -1,59 +1,117 @@
 //確保你的 JavaScript 在 DOM 完全加載後執行。例如，可以使用 DOMContentLoaded 事件：
 document.addEventListener('DOMContentLoaded', function() {
 
-    //點擊'+' '-'按鍵，控制商品購買的數量input增加或減少
-    // const minus1 = document.querySelector('#minus1')
-    // const plus1 = document.querySelector('#plus1')
-    // const input1 = document.querySelector('#input1')
-    
-    
-    // minus1.addEventListener('click', function(){
-    //     let currentValue = +(input1.value)
-    //     let minValue = +(input1.getAttribute('min'))
-    //     if(currentValue > minValue){
-    //         input1.value = currentValue - 1
-    
-    //     }
-    
-    
-    // });
-    
-    // plus1.addEventListener('click', function(){
-    //     let currentValue = +(input1.value)
-    //     let maxValue = +(input1.getAttribute('max'))
-    //     if(currentValue < maxValue){
-    //         input1.value = currentValue + 1
-    
-    //     }
-        
-    // });
 
-    // const minus2 = document.querySelector('#minus2')
-    // const plus2 = document.querySelector('#plus2')
-    // const input2 = document.querySelector('#input2')
-    
-    
-    // minus2.addEventListener('click', function(){
-    //     let currentValue = +(input2.value)
-    //     let minValue = +(input2.getAttribute('min'))
-    //     if(currentValue > minValue){
-    //         input2.value = currentValue - 1
-    
-    //     }
-    
-    
-    // });
-    
-    // plus2.addEventListener('click', function(){
-    //     let currentValue = +(input2.value)
-    //     let maxValue = +(input2.getAttribute('max'))
-    //     if(currentValue < maxValue){
-    //         input2.value = currentValue + 1
-    
-    //     }
-        
-    // });
 
+    //以下為點選全部刪除，購物車數量消失，並顯示您的購物車無任何商品
+
+    //電腦版
+    const deleteA = document.querySelector('#delete')
+    const itemlist1 = document.querySelector('.xs1-scope')
+    const itemlist2 = document.querySelector('.xs2-scope')
+    const nogoods = document.querySelector('.nogoods-1')
+
+    const itemlist3 = document.querySelector('.xs1-scope-RWD')
+    const itemlist4 = document.querySelector('.xs2-scope-RWD')
+
+    const itemDelete1 = document.querySelector('#itemDelete1')
+    const itemDelete2 = document.querySelector('#itemDelete2')
+
+    const itemDelete3 = document.querySelector('#itemDelete3')
+
+    const itemDelete4 = document.querySelector('#itemDelete4')
+
+    deleteA.addEventListener('click', function(e){
+        e.preventDefault()
+        let confirmDelete = confirm('您確定要刪除所有商品嗎?')
+
+        if(confirmDelete){
+        itemlist1.classList.add('active')
+        itemlist2.classList.add('active')
+        nogoods.classList.add('active')
+        preTotal.innerHTML = `NT$0`
+        totalFee.innerHTML = `NT$0`
+        shippingFee.innerHTML = `NT$`
+        }
+
+        
+
+    })
+
+     //以下為點選個別刪除圖，個別點選後，隱藏並更新小計和總金額的數字
+     //電腦版
+
+     function checkAllHidden() {
+        const items = document.querySelectorAll('.xs1-scope, .xs2-scope');
+        let allHidden = true;
+
+        // 使用 forEach 遍歷所有項目
+        items.forEach(function(item) {
+            // 檢查當前項目是否包含 'active' 
+            if (!item.classList.contains('active')) {
+                allHidden = false; // 如果有任一項目沒有隱藏，設置 allHidden 為false
+            }
+        });
+
+        // 如果所有項目都被隱藏，顯示 no goods
+        if (allHidden) {
+            nogoods.classList.add('active');
+            preTotal.innerHTML = `NT$0`
+            totalFee.innerHTML = `NT$0`
+            shippingFee.innerHTML = `NT$`
+        }
+    }
+    
+
+     itemDelete1.addEventListener('click', function(){
+        itemlist1.classList.add('active')
+        
+        preTotal.innerHTML = `NT$${((input4.value) * unitPrice4Number) + ((input6.value) * unitPrice6Number) - ((input4.value) * unitPrice4Number) }`
+
+        
+
+        totalFee.innerHTML = `NT$${preTotal.innerHTML.replace('NT$', '')}`
+        checkAllHidden()
+       
+        
+        
+
+
+     })
+
+     itemDelete2.addEventListener('click', function(){
+        itemlist2.classList.add('active')
+        
+        preTotal.innerHTML = `NT$${((input4.value) * unitPrice4Number) + ((input6.value) * unitPrice6Number) - ((input6.value) * unitPrice6Number) }`
+
+        // preTotal.innerHTML = `NT$${((input3.value) * unitPrice3Number) + ((input5.value) * unitPrice5Number) - ((input3.value) * unitPrice3Number) }`
+
+        totalFee.innerHTML = `NT$${preTotal.innerHTML.replace('NT$', '')}`
+        checkAllHidden()
+        
+     })
+    
+
+     itemDelete3.addEventListener('click', function(){
+        itemlist3.classList.add('active')
+
+        preTotal.innerHTML = `NT$${((input3.value) * unitPrice3Number) + ((input5.value) * unitPrice5Number) - ((input3.value) * unitPrice3Number) }`
+
+        totalFee.innerHTML = `NT$${preTotal.innerHTML.replace('NT$', '')}`
+        checkAllHidden()
+        
+     })
+
+     itemDelete4.addEventListener('click', function(){
+        itemlist4.classList.add('active')
+        
+
+        preTotal.innerHTML = `NT$${((input3.value) * unitPrice3Number) + ((input5.value) * unitPrice5Number) - ((input5.value) * unitPrice5Number) }`
+
+        totalFee.innerHTML = `NT$${preTotal.innerHTML.replace('NT$', '')}`
+        checkAllHidden()
+        
+     })
 
 
     //以下為電腦版，數量增加刪減的js

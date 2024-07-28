@@ -130,6 +130,8 @@ a{
 
 }
 
+
+
 .md-scope{
     /* border: 1px solid blue;  */
     display: flex;
@@ -216,11 +218,37 @@ a{
     color: #954E39;
 }
 
+.nogoods-1{
+    width: 100%;
+    padding-top: 40px;
+    /* border: 1px solid blue; */
+    font-size: 1.6rem;
+    font-weight: 400;
+    display: none;
+}
+
+.nogoods-1.active{
+    display: block;
+    width: 100%;
+    padding-top: 40px;
+    /* border: 1px solid blue; */
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
 .xs1-scope{
     width: 100%;
     display: flex;
     align-items: center;
     margin-top: 24px;
+}
+
+.xs1-scope.active{
+    display: none;
+}
+
+.xs2-scope.active{
+    display: none;
 }
 
 .col-xs-1{
@@ -396,6 +424,7 @@ a{
 
 
 .xs2-scope{
+    margin-top: 20px;
     display: flex;
     align-items: center;
     position: relative;
