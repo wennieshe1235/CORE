@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const unitPrice4Text = unitPrice4.textContent //獲取a連結文字中的內容
     const unitPrice4Number = parseInt(unitPrice4Text.replace('$', '').trim())
     const cartAmount4 = document.querySelector('#p4')
-    const shippingOption = document.querySelector('#shipping option')
+    const shippingSelect = document.querySelector('#shipping')
     const preTotal = document.querySelector('.count > p')
     const shippingFee = document.querySelector('.shipping-fee > p')
     const totalFee = document.querySelector('.total-fee > p')
@@ -76,6 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const unitPrice6Text = unitPrice6.textContent //獲取a連結文字中的內容
     const unitPrice6Number = parseInt(unitPrice6Text.replace('$', '').trim())
     const cartAmount6 = document.querySelector('#p6')
+    let shippingprice = 0
+
+
 
     const preTotalArr = [cartAmount4, cartAmount6]
     
@@ -89,7 +92,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }
        
     }
-   
+
+
+    
+    //計算總金額
+    function updateTotalFee() {
+        const updateTotalFeeArr = [parseInt(preTotal.textContent.replace('$', '').trim()), parseInt(shippingprice)]
+        let sum = 0
+        for(let i = 0; i < updateTotalFeeArr.length; i++){
+            
+            sum = sum +  updateTotalFeeArr[i]
+            totalFee.innerHTML = `$${sum}`
+    
+        
+       
+    }
+}
+
+
+
+
+
+   //運費事件聆聽，加入運費
+    shippingSelect.addEventListener('change', function(){
+        const shippingOption = shippingSelect.options[shippingSelect.selectedIndex]
+        shippingprice = shippingOption.dataset.price
+        shippingFee.innerHTML = `$${shippingprice}`
+        updateTotalFee()
+        
+        
+
+        
+    })
     
     minus4.addEventListener('click', function(){
         let currentValue = +(input4.value)
@@ -104,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cartAmount4.innerHTML = `$${(input4.value) * unitPrice4Number}` 
         // preTotal.innerHTML = `$${parseInt(cartAmount4.textContent.replace('$', '').trim())}`
         updatePreTotal()
+        updateTotalFee()
         
 
     
@@ -121,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cartAmount4.innerHTML = `$${(input4.value) * unitPrice4Number}` 
         // preTotal.innerHTML = `$${parseInt(cartAmount4.textContent.replace('$', '').trim())}`
         updatePreTotal()
+        updateTotalFee()
 
         
     });
@@ -139,6 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cartAmount6.innerHTML = `$${(input6.value) * unitPrice6Number}` 
         // preTotal.innerHTML = `$${parseInt(cartAmount6.textContent.replace('$', '').trim())}`
         updatePreTotal()
+        updateTotalFee()
     
     
     });
@@ -154,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cartAmount6.innerHTML = `$${(input6.value) * unitPrice6Number}` 
         // preTotal.innerHTML = `$${parseInt(cartAmount6.textContent.replace('$', '').trim())}`
         updatePreTotal()
+        updateTotalFee()
         
     });
 
