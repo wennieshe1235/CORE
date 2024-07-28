@@ -169,7 +169,25 @@ a{
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* .content-2{} */
+.category img{
+    display: none;
+
+}
+
+.drop-down{
+    margin-bottom: 16px;
+    background: lightgray;
+    padding: 20px 15px;
+    border-radius: 5px;
+    /* border: 1px solid green; */
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0 ;/* 設置適當的padding */
+    
+}
+
 
 .content-2 p{
     text-align: right;
@@ -446,19 +464,29 @@ a{
 
     }
 
-    .category::after{
+    .category img{
+        display: block;
+        /* border: 1px solid red; */
         position: absolute;
         top: 50%;
         right: 4%;
-        transform: translateY(-50%);
+        transform: translateY(-50%) rotate(0);
         /* transform: translateY(-50%) rotate(180deg); */
         content: "";
         width: 22px;
         height: 20px;
-        background: url(../img/chevron-down-solid.svg) center center / contain no-repeat;
         transition: transform .3s;
 
+        
+
     }
+
+    .category img.rotate {
+        transform: translateY(-50%) rotate(180deg);
+        transition: transform .3s;
+    }
+
+    
 
     .category-header span{
         /* border: 1px solid red; */
@@ -479,6 +507,56 @@ a{
     .btn{
         display: none;
     }
+
+    .drop-down{
+        margin-bottom: 16px;
+        background: rgb(229, 225, 218);
+        padding: 20px 15px;
+        border-radius: 5px;
+        /* border: 1px solid green; */
+        display: block;
+        width: 80%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+        padding: 0 ;/* 設置適當的padding */
+        
+    }
+    
+    .drop-down.show {
+        /* display: block; */
+        max-height: 500px; /* 設置一個足夠大的值來顯示內容 */
+        padding: 20px 0; /* 顯示時的padding */
+        
+    }
+    
+    .drop-down ul{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px 30px;
+        /* border: 1px solid green; */
+    }
+    
+    .drop-down ul li{
+        width: 80px;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .drop-down ul li a{
+        font-size: 13px;
+        letter-spacing: .05em;
+        color: #fff;
+        background: #ad9f88;
+        display: flex;
+        justify-content: center;
+        padding: 6px 6px;
+        transition: opacity .3s;
+    }
+
 
     .content-2 p{
         /* border: 1px solid blue; */
