@@ -251,6 +251,10 @@ a{
     position: relative;
 }
 
+.text-item img{
+    display: none;
+
+}
 
 
 .text-item h3{
@@ -284,6 +288,20 @@ a{
     color: #B36243;
     font-weight: 800;
 
+}
+
+.drop-down{
+    margin-bottom: 16px;
+    background: lightgray;
+    padding: 20px 15px;
+    border-radius: 5px;
+    /* border: 1px solid green; */
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0 ;/* 設置適當的padding */
+    
 }
 
 .vision-product{
@@ -509,20 +527,29 @@ a{
 
     }
 
-    .text::after{
+    .text-item img{
+        display: block;
+        /* border: 1px solid red; */
         position: absolute;
         top: 50%;
         right: 4%;
-        transform: translateY(-50%);
+        transform: translateY(-50%) rotate(0);
         /* transform: translateY(-50%) rotate(180deg); */
         content: "";
         width: 22px;
         height: 20px;
-        background: url(../img/chevron-down-solid.svg) center center / contain no-repeat;
         transition: transform .3s;
+
+        
 
     }
 
+    .text-item img.rotate {
+        transform: translateY(-50%) rotate(180deg);
+        transition: transform .3s;
+    }
+
+    
     .text-item > h3{
         color: #fff;
     }
@@ -535,6 +562,58 @@ a{
         display: none;
     
     }
+
+
+    .drop-down{
+        margin-bottom: 16px;
+        background: lightgray;
+        padding: 20px 15px;
+        border-radius: 5px;
+        /* border: 1px solid green; */
+        display: block;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+        padding: 0 ;/* 設置適當的padding */
+        
+    }
+    
+    .drop-down.show {
+        /* display: block; */
+        
+        max-height: 500px; /* 設置一個足夠大的值來顯示內容 */
+        padding: 20px 0; /* 顯示時的padding */
+        
+    }
+    
+    .drop-down ul{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px 30px;
+        /* border: 1px solid green; */
+    }
+    
+    .drop-down ul li{
+        width: 80px;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .drop-down ul li a{
+        font-size: 13px;
+        letter-spacing: .05em;
+        color: #fff;
+        background: #969696;
+        display: flex;
+        justify-content: center;
+        padding: 6px 6px;
+        transition: opacity .3s;
+    }
+
 
     .vision-product{
         /* border: 1px solid red; */
